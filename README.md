@@ -7,7 +7,10 @@ A small, hand-authored kit of prompts that turns any modern AI chat — Claude, 
 **To use, in three steps.**
 
 1. Open a fresh chat in your AI of choice.
-2. Drag every file in this folder into the chat, *or* — if your AI can fetch URLs — paste this single sentence into the chat: *"Please read https://alexmagginetti.github.io/study-guide-generator/GENERATOR.html and follow the instructions inside."*
+2. Pick whichever of these three setups is easiest for you right now:
+   - **Bundle (recommended for one-off studies, three clicks).** Download `STUDY_KIT_BUNDLE.md` from the kit's [Releases page](https://github.com/Alexmagginetti/study-guide-generator/releases). Attach it to the chat. That single file contains the full kit — instructions plus both visual example files inlined — so there is no folder, no fetching, and no setup beyond the attachment.
+   - **Folder (recommended for recurring use).** Drag every file in this folder into the chat — or, in Cowork / a Claude Project / Gemini Gem / Grok Workspace, drop the kit's files into project knowledge once and reuse the setup forever.
+   - **URL (works only if your AI can fetch URLs reliably).** Paste this single sentence into the chat: *"Please read https://alexmagginetti.github.io/study-guide-generator/GENERATOR.html and follow the instructions inside."* Most browser-hosted AIs cannot reliably fetch the kit's example files this way and will ask mid-session for them; the Bundle path avoids that.
 3. Tell the AI: "I want a study on [whatever]." It will ask you four short questions, announce its defaults out loud for everything else, and produce a complete HTML study you can open in any browser, save to PDF, or email to your group.
 
 **Trust posture.** Hand-authored by Alex Magginetti. Anchored to specific evangelical standards — the Lausanne Covenant baseline, with the Southern Baptist Convention / Dallas Theological Seminary toggle enabled by default. Every generated study is **automatically self-validated** by an internal quality-assurance pass run by the same AI in the same session before delivery — no homework on you. The "QA pass is mandatory and cannot be skipped" disclaimer appears in every generated study's footer. Power users may run an optional second-opinion external QA in a different AI session, but the kit no longer requires it.
