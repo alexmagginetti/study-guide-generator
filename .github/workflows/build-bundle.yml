@@ -1,0 +1,68 @@
+name: Build Study Kit Bundle
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'GENERATOR.md'
+      - 'EXAMPLES/**'
+      - '.github/workflows/build-bundle.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build STUDY_KIT_BUNDLE.md
+        run: |
+          BUNDLE_DATE="$(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          BUNDLE_COMMIT="$(git rev-parse HEAD)"
+
+          {
+            cat scripts/bundle-preamble.md
+            echo
+            echo "---"
+            echo
+            cat GENERATOR.md
+            echo
+            echo "---"
+            echo
+            echo "## EXAMPLES/romans_8_womens_30min.html"
+            echo
+            echo '```html'
+            cat EXAMPLES/romans_8_womens_30min.html
+            echo '```'
+            echo
+            echo "## EXAMPLES/mere_christianity_chapter_1.html"
+            echo
+            echo '```html'
+            cat EXAMPLES/mere_christianity_chapter_1.html
+            echo '```'
+            echo
+            echo "---"
+            echo
+            echo "## Bundle metadata"
+            echo
+            echo "- Bundle generated: ${BUNDLE_DATE}"
+            echo "- Source commit: ${BUNDLE_COMMIT}"
+            echo "- Verify integrity by comparing the SHA-256 of the canonical files against CHECKSUMS.txt in the repo root."
+          } > STUDY_KIT_BUNDLE.md
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain STUDY_KIT_BUNDLE.md)" ]]; then
+            git add STUDY_KIT_BUNDLE.md
+            git commit -m "chore(bundle): regenerate STUDY_KIT_BUNDLE.md [skip ci]"
+            git push
+          else
+            echo "No bundle changes; skipping commit."
+          fi
