@@ -7,7 +7,7 @@ A small, hand-authored kit of prompts that turns any modern AI chat — Claude, 
 **To use, in three steps.**
 
 1. Open a fresh chat in your AI of choice.
-2. Drag every file in this folder into the chat, *or* — if your AI can fetch URLs — paste this single sentence into the chat: *"Please read https://github.com/alexmagginetti/study-guide-generator/blob/main/GENERATOR.md and follow the instructions inside."*
+2. Drag every file in this folder into the chat, *or* — if your AI can fetch URLs — paste this single sentence into the chat: *"Please read https://alexmagginetti.github.io/study-guide-generator/GENERATOR.html and follow the instructions inside."*
 3. Tell the AI: "I want a study on [whatever]." It will ask you four short questions, announce its defaults out loud for everything else, and produce a complete HTML study you can open in any browser, save to PDF, or email to your group.
 
 **Trust posture.** Hand-authored by Alex Magginetti. Anchored to specific evangelical standards — the Lausanne Covenant baseline, with the Southern Baptist Convention / Dallas Theological Seminary toggle enabled by default. Every generated study is **automatically self-validated** by an internal quality-assurance pass run by the same AI in the same session before delivery — no homework on you. The "QA pass is mandatory and cannot be skipped" disclaimer appears in every generated study's footer. Power users may run an optional second-opinion external QA in a different AI session, but the kit no longer requires it.
@@ -16,4 +16,4 @@ A small, hand-authored kit of prompts that turns any modern AI chat — Claude, 
 
 **License posture.** © 2026 Alex Magginetti. All rights reserved. This kit is shared with specific individuals by direct permission of the author. If you received it without permission, please contact the author before using it.
 
-The full instruction set the AI executes lives in `GENERATOR.md`. A finished sample study lives in `EXAMPLES/dani
+The full instruction set the AI executes lives in `GENERATOR.md`. Finished sample studies live in `EXAMPLES/romans_8_womens_30min.html` (Bible study) and `EXAMPLES/mere_christianity_chapter_1.html` (Christian-book study).
