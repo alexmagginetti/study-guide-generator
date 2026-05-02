@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <title>Mere Christianity Chapter 1 — The Law of Human Nature</title>
+    <style>
+        :root { --text-scale: 1; }
+        * { box-sizing: border-box; margin: 0; padding: 0 }
+        html { font-size: calc(16px * var(--text-scale)); }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #1a1a1a; line-height: 1.8; width: 100%; max-width: 100%; margin: 0; padding: 24px 5vw; background: #fff; font-size: 1rem; orphans: 3; widows: 3; box-sizing: border-box; }
+        @media (prefers-color-scheme: dark) { body { background: #1a1a1a; color: #e8e8e8 } }
+
+        .top-controls { display: flex; gap: 8px; justify-content: flex-end; align-items: center; margin: 0 0 1rem; flex-wrap: wrap; }
+        .text-controls { display: flex; align-items: center; gap: 4px; padding: 6px 10px; border: 2px solid #888; border-radius: 10px; background: #f5f5f5; font-size: 0.85rem; }
+        @media (prefers-color-scheme: dark) { .text-controls { background: #2a2a2a; border-color: #666 } }
+        .text-controls span { color: #444; font-weight: 600; margin-right: 2px; font-size: 0.8rem; }
+        @media (prefers-color-scheme: dark) { .text-controls span { color: #aaa } }
+        .text-btn { font-family: inherit; font-weight: 600; padding: 6px 12px; border-radius: 6px; border: 1px solid #888; background: #fff; color: #1a1a1a; cursor: pointer; min-width: 36px; }
+        .text-btn:hover { background: #e8f0fe; border-color: #1a56db; }
+        @media (prefers-color-scheme: dark) { .text-btn { background: #1e1e1e; color: #e8e8e8; border-color: #666 } .text-btn:hover { background: #1e3a5f; border-color: #7eb8ff } }
+        .text-btn.small { font-size: 0.75rem; }
+        .text-btn.medium { font-size: 1rem; }
+        .text-btn.large { font-size: 1.2rem; }
+
+        .print-btn { font-size: 0.85rem; font-weight: 600; padding: 8px 16px; border-radius: 10px; border: 2px solid #888; background: #fff; color: #1a1a1a; cursor: pointer; font-family: inherit; }
+        .print-btn:hover { background: #e8f0fe; border-color: #1a56db; }
+        @media (prefers-color-scheme: dark) { .print-btn { background: #1e1e1e; color: #e8e8e8; border-color: #666 } .print-btn:hover { background: #1e3a5f; border-color: #7eb8ff } }
+
+        .study-nav { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 1.5rem }
+        .ch-btn { font-size: 0.8rem; padding: 6px 14px; border-radius: 8px; border: 2px solid #ccc; background: #f5f5f5; color: #555; cursor: default; font-family: inherit; }
+        .ch-btn.active { background: #e8f0fe; color: #1a56db; border-color: #1a56db; font-weight: 600; }
+        @media (prefers-color-scheme: dark) { .ch-btn { background: #2a2a2a; color: #aaa; border-color: #555 } .ch-btn.active { background: #1e3a5f; color: #7eb8ff; border-color: #7eb8ff } }
+
+        .study-title { font-size: 1.6rem; font-weight: 700; margin: 0 0 6px; line-height: 1.4; }
+        .study-subtitle { font-size: 0.85rem; color: #666; margin: 0 0 1.5rem; }
+        @media (prefers-color-scheme: dark) { .study-subtitle { color: #aaa } }
+
+        .study-inputs { background: #f0f4f8; border-left: 4px solid #1a56db; padding: 14px 18px; margin: 0 0 2rem; font-size: 0.85rem; color: #404040; border-radius: 0 10px 10px 0; }
+        @media (prefers-color-scheme: dark) { .study-inputs { background: #252b33; color: #c0c0c0; border-left-color: #7eb8ff } }
+        .study-inputs strong { color: #1a56db; font-weight: 700 }
+        @media (prefers-color-scheme: dark) { .study-inputs strong { color: #7eb8ff } }
+        .study-inputs ul { list-style: none; padding: 0; margin: 6px 0 0 }
+        .study-inputs li { padding: 3px 0 }
+
+        .copyright-note { background: #fff3cd; border: 2px solid #f0a500; border-radius: 10px; padding: 14px 18px; margin: 0 0 1.5rem; font-size: 0.9rem; color: #6b4500; }
+        @media (prefers-color-scheme: dark) { .copyright-note { background: #3a2f1a; border-color: #f0c040; color: #f0c040 } }
+        .copyright-note strong { font-weight: 700; }
+
+        .tldr { background: #f8f9fa; border: 2px solid #888; border-radius: 14px; padding: 1.5rem 1.75rem; margin: 0 0 1.5rem }
+        @media (prefers-color-scheme: dark) { .tldr { background: #252525; border-color: #666 } }
+        .tldr h2 { font-size: 1.05rem; font-weight: 700; margin: 0 0 1rem; color: #1a56db; }
+        @media (prefers-color-scheme: dark) { .tldr h2 { color: #7eb8ff } }
+        .tldr ul { list-style: none; padding: 0 }
+        .tldr li { font-size: 0.95rem; color: #2a2a2a; padding: 6px 0 6px 24px; position: relative }
+        @media (prefers-color-scheme: dark) { .tldr li { color: #d0d0d0 } }
+        .tldr li::before { content: ""; position: absolute; left: 0; top: 14px; width: 10px; height: 10px; border-radius: 50%; background: #1a56db }
+
+        .home-section { background: #fff; border: 3px solid #1a56db; border-radius: 14px; padding: 1.5rem 1.75rem; margin: 0 0 1.5rem }
+        @media (prefers-color-scheme: dark) { .home-section { background: #1e1e1e; border-color: #7eb8ff } }
+        .home-section h2 { font-size: 1.05rem; font-weight: 700; margin: 0 0 1rem; color: #1a56db; }
+        @media (prefers-color-scheme: dark) { .home-section h2 { color: #7eb8ff } }
+        .home-section p { font-size: 0.95rem; margin: 0 0 0.85rem }
+        .home-section p strong { color: #1a56db; }
+        @media (prefers-color-scheme: dark) { .home-section p strong { color: #7eb8ff } }
+
+        .big-idea { background: #fff7e6; border-left: 4px solid #f0a500; padding: 12px 16px; margin: 0 0 1rem; border-radius: 0 8px 8px 0; font-weight: 600; font-size: 0.95rem; color: #6b4500; }
+        @media (prefers-color-scheme: dark) { .big-idea { background: #3a2f1a; color: #f0c040; border-left-color: #f0c040 } }
+
+        .section-body h4 { font-size: 1rem; font-weight: 700; color: #1a56db; margin: 1.25rem 0 0.5rem; padding-bottom: 4px; border-bottom: 1px solid #ccc; }
+        @media (prefers-color-scheme: dark) { .section-body h4 { color: #7eb8ff; border-bottom-color: #444 } }
+
+        .verse { font-style: italic; color: #2a2a2a; font-size: 0.95rem; border-left: 4px solid #1a56db; padding: 14px 20px; margin: 16px 0; background: #f0f4f8; border-radius: 0 10px 10px 0; }
+        @media (prefers-color-scheme: dark) { .verse { color: #d8d8d8; background: #252b33; border-left-color: #7eb8ff } }
+        .verse .ref { display: block; margin-top: 8px; font-style: normal; font-weight: 700; color: #1a56db; font-size: 0.85rem; }
+        @media (prefers-color-scheme: dark) { .verse .ref { color: #7eb8ff } }
+
+        .takeaways { background: #e8f5e9; border: 2px solid #2e7d32; border-radius: 10px; padding: 14px 18px; margin: 1.25rem 0 0; }
+        @media (prefers-color-scheme: dark) { .takeaways { background: #1a3a2a; border-color: #66bb6a } }
+        .takeaways h5 { font-size: 0.85rem; font-weight: 700; margin: 0 0 8px; color: #1b5e20; text-transform: uppercase; letter-spacing: 0.5px; }
+        @media (prefers-color-scheme: dark) { .takeaways h5 { color: #a5d6a7 } }
+        .takeaways ul { list-style: none; padding: 0; margin: 0 }
+        .takeaways li { font-size: 0.9rem; padding: 4px 0 4px 22px; position: relative; color: #1b5e20; }
+        @media (prefers-color-scheme: dark) { .takeaways li { color: #c8e6c9 } }
+        .takeaways li::before { content: "✓"; position: absolute; left: 0; top: 4px; font-weight: 700; color: #2e7d32; }
+        @media (prefers-color-scheme: dark) { .takeaways li::before { color: #66bb6a } }
+
+        .section { border: 2px solid #999; border-radius: 14px; margin: 0 0 18px; overflow: hidden }
+        @media (prefers-color-scheme: dark) { .section { border-color: #555 } }
+        .section-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; user-select: none; background: #fff; transition: background 0.15s }
+        @media (prefers-color-scheme: dark) { .section-header { background: #1e1e1e } }
+        .section-header:hover { background: #f0f4f8 }
+        @media (prefers-color-scheme: dark) { .section-header:hover { background: #252525 } }
+        .section-header h3 { font-size: 1.05rem; font-weight: 700 }
+        .section-header .depth { font-size: 0.75rem; padding: 3px 10px; border-radius: 12px; font-weight: 600 }
+        .depth-all { background: #d4edda; color: #155724 }
+        .depth-mid { background: #fff3cd; color: #856404 }
+        .depth-deep { background: #e8f0fe; color: #1a56db }
+        @media (prefers-color-scheme: dark) { .depth-all { background: #1a3a2a; color: #7dcea0 } .depth-mid { background: #3a3520; color: #f0c040 } .depth-deep { background: #1e3a5f; color: #7eb8ff } }
+        .chevron { font-size: 1rem; color: #555; transition: transform 0.2s }
+        @media (prefers-color-scheme: dark) { .chevron { color: #aaa } }
+        .section-header.open .chevron { transform: rotate(90deg) }
+        .section-body { display: none; padding: 20px; border-top: 2px solid #999; font-size: 0.95rem; }
+        @media (prefers-color-scheme: dark) { .section-body { border-top-color: #555 } }
+        .section-body.show { display: block }
+        .section-body p { margin: 0 0 0.85rem }
+        .section-body p strong:first-child { color: #1a56db; }
+        @media (prefers-color-scheme: dark) { .section-body p strong:first-child { color: #7eb8ff } }
+
+        .fold-divider { margin: 2rem 0; padding: 18px 20px; background: #1a1a1a; color: #fff; border-radius: 12px; text-align: center; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; line-height: 1.5; }
+        @media (prefers-color-scheme: dark) { .fold-divider { background: #f0f0f0; color: #1a1a1a } }
+        .fold-divider .fold-arrow { font-size: 1.3rem; display: block; margin: 4px 0; }
+
+        .q-list { list-style: none; padding: 0; counter-reset: q }
+        .q-list li { counter-increment: q; padding: 12px 0 12px 40px; position: relative; font-size: 0.95rem; line-height: 1.7; }
+        .q-list li::before { content: counter(q); position: absolute; left: 0; top: 12px; width: 28px; height: 28px; border-radius: 50%; background: #1a56db; color: #fff; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+        .q-tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 8px; margin-left: 6px; font-weight: 600; }
+        .q-obs { background: #d4edda; color: #155724 }
+        .q-int { background: #fff3cd; color: #856404 }
+        .q-app { background: #e8f0fe; color: #1a56db }
+        @media (prefers-color-scheme: dark) { .q-obs { background: #1a3a2a; color: #7dcea0 } .q-int { background: #3a3520; color: #f0c040 } .q-app { background: #1e3a5f; color: #7eb8ff } }
+
+        .leader-note { background: #fff7e6; border: 2px solid #f0a500; border-radius: 10px; padding: 14px 18px; font-size: 0.9rem; color: #6b4500; margin: 12px 0; }
+        @media (prefers-color-scheme: dark) { .leader-note { background: #3a2f1a; border-color: #f0c040; color: #f0c040 } }
+
+        .notes-label { font-size: 0.85rem; font-weight: 700; color: #1a56db; margin: 1.25rem 0 6px; display: block; text-transform: uppercase; letter-spacing: 0.5px; }
+        @media (prefers-color-scheme: dark) { .notes-label { color: #7eb8ff } }
+        .notes-section { background: #fafafa; border: 2px dashed #888; border-radius: 10px; padding: 14px; margin: 0 0 12px; min-height: 90px; font-size: 0.9rem; color: #1a1a1a; line-height: 1.7; font-family: inherit; }
+        .notes-section:focus { outline: 3px solid #1a56db; outline-offset: 2px; background: #fff; }
+        .notes-section:empty::before { content: "Click here to add your notes during the study. Press 'Save to PDF / Print' to keep them — notes do not persist after the browser is closed."; color: #888; font-style: italic; pointer-events: none; }
+        @media (prefers-color-scheme: dark) { .notes-section { background: #252525; border-color: #666; color: #e8e8e8 } .notes-section:focus { background: #1e1e1e } .notes-section:empty::before { color: #888 } }
+
+        a, a:visited { color: #1a56db; font-weight: 600; }
+        @media (prefers-color-scheme: dark) { a, a:visited { color: #7eb8ff } }
+
+        .footer { margin: 2.5rem 0 0; padding: 1.25rem 0 0; border-top: 3px solid #999; font-size: 0.78rem; color: #555; }
+        @media (prefers-color-scheme: dark) { .footer { border-top-color: #555; color: #aaa } }
+        .fingerprint p { margin: 0 0 0.6rem; line-height: 1.6 }
+        .fingerprint em { font-style: italic; color: #777 }
+        @media (prefers-color-scheme: dark) { .fingerprint em { color: #888 } }
+
+        @media print {
+            .section-body { display: block !important }
+            .chevron, .print-btn, .text-controls, .top-controls, .study-nav { display: none !important }
+            .notes-section { border: 1px solid #888; background: #fff; color: #000; page-break-inside: avoid; break-inside: avoid; }
+            .notes-section:empty::before { content: "" }
+            .fold-divider { background: #000 !important; color: #fff !important; page-break-inside: avoid; break-inside: avoid; page-break-after: avoid; }
+            body { max-width: 100%; color: #000; background: #fff; orphans: 4; widows: 4; padding: 0; }
+            .section, .tldr, .home-section, .big-idea, .takeaways, .verse, .leader-note, .study-inputs, .copyright-note { page-break-inside: avoid; break-inside: avoid; }
+            .section-header { page-break-after: avoid; break-after: avoid; }
+            .section-body h4 { page-break-after: avoid; break-after: avoid; }
+            h2, h3, h4, h5 { page-break-after: avoid; break-after: avoid; }
+            p { orphans: 3; widows: 3; }
+            .q-list li { page-break-inside: avoid; break-inside: avoid; }
+            @page { margin: 0.75in; @top-center { content: "Mere Christianity Chapter 1 — The Law of Human Nature"; font-size: 9px; color: #999 } }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-controls">
+        <div class="text-controls">
+            <span>TEXT SIZE</span>
+            <button class="text-btn small" onclick="adjustText(-1)" aria-label="Smaller text">A−</button>
+            <button class="text-btn medium" onclick="adjustText(0)" aria-label="Default text size">A</button>
+            <button class="text-btn large" onclick="adjustText(1)" aria-label="Larger text">A+</button>
+        </div>
+        <button class="print-btn" onclick="document.querySelectorAll('.section-body').forEach(b=>b.classList.add('show'));document.querySelectorAll('.section-header').forEach(h=>h.classList.add('open'));window.print()">Save to PDF / Print</button>
+    </div>
+
+    <div class="study-nav">
+        <button class="ch-btn active">Mere Christianity · Chapter 1</button>
+    </div>
+
+    <div class="study-title">Mere Christianity — Chapter 1: The Law of Human Nature</div>
+    <div class="study-subtitle">By C.S. Lewis · Coed adults · 1.5-hour meeting (~60 min discussion) · Full coverage · Version V1</div>
+
+    <div class="study-inputs">
+        <strong>Study inputs (from input interview):</strong>
+        <ul>
+            <li><strong>Generated by:</strong> [study leader's name — fill in when sharing]</li>
+            <li><strong>Generated on:</strong> 2026-05-01 (timestamp recorded by the generating AI)</li>
+            <li><strong>Version:</strong> V1 (initial generation)</li>
+            <li><strong>Source:</strong> <em>Mere Christianity</em> by C.S. Lewis · Chapter 1 ("The Law of Human Nature")</li>
+            <li><strong>Audience:</strong> coed adults</li>
+            <li><strong>Group context:</strong> generic (no group-specific application provided — adapt as you go)</li>
+            <li><strong>Translation:</strong> ESV (for scripture references)</li>
+            <li><strong>Meeting time:</strong> 1.5-hour meeting (~60 min discussion content)</li>
+            <li><strong>Coverage:</strong> Full (Deep Dive and Theological Soundings included below the fold)</li>
+            <li><strong>Theological lens:</strong> Conservative Evangelical (<a href="https://lausanne.org/content/covenant/lausanne-covenant" target="_blank">Lausanne Covenant</a>) baseline + <a href="https://bfm.sbc.net/bfm2000/" target="_blank">SBC</a>/<a href="https://www.dts.edu/about/doctrinal-statement/" target="_blank">DTS</a> toggle</li>
+        </ul>
+    </div>
+
+    <div class="copyright-note">
+        <strong>Note on Lewis's text.</strong> <em>Mere Christianity</em> is under copyright (originally 1952; rights held by the C.S. Lewis estate and HarperCollins). This study summarizes Lewis's argument and quotes only short fair-use excerpts. Group members should read the chapter directly — it is short (about 8 pages in most editions). Inexpensive copies are available at most Christian bookstores, on Amazon, and through your church library.
+    </div>
+
+    <div class="tldr">
+        <h2>What you'll learn this week</h2>
+        <ul>
+            <li>What Lewis means by the <strong>"Law of Human Nature"</strong> — and why he insists it's not a description of how people behave but a standard people <em>appeal to</em> when they feel wronged</li>
+            <li>Why the universal human reaction to unfairness ("That's not fair!") is the strongest evidence Lewis offers for a Moral Lawgiver</li>
+            <li>How Lewis distinguishes between <strong>describing</strong> behavior and <strong>prescribing</strong> behavior — and why grounding morality in herd instinct or social convention fails his own test</li>
+            <li>Where Lewis's argument anchors directly to Scripture — especially <a href="https://www.biblegateway.com/passage/?search=Romans+2&version=ESV" target="_blank">Romans 2:14–15</a>, where Paul says Gentiles "show that the work of the law is written on their hearts"</li>
+            <li>What it means for your everyday life — in marriage, parenting, work, friendship — that you are constantly appealing to a moral standard you cannot account for without God</li>
+        </ul>
+    </div>
+
+    <div class="home-section">
+        <h2>Bringing it home — for our group</h2>
+        <p><strong>Lewis opens with two strangers quarreling.</strong> One says, "How would you like it if anyone did the same to you?" The other does not say "Your standard doesn't apply to me." The other says, "It's different in my case because…" Both are appealing to a shared rule of fair play. Both expect the other to recognize it. That little observation — which you've made yourself a thousand times without thinking — is the doorway into Lewis's whole argument for God.</p>
+        <p><strong>You appeal to this standard every day.</strong> When your spouse breaks an agreement and you feel the sting, you don't just feel angry — you feel <em>wronged</em>. When your boss takes credit for your work, you don't shrug; something in you says, "That's not how this is supposed to be." When you discipline your kids, you don't say, "I prefer that you not lie." You say, "Lying is wrong." All of this is the moral law speaking — through you, in you, around you. Lewis's question is the one your group needs to sit with: where did that standard come from?</p>
+        <p><strong>Lewis is making a careful distinction.</strong> He is not saying everyone agrees on every moral question. He is saying everyone, in every culture, appeals to <em>some</em> standard of fair play — and the standards we appeal to are remarkably similar across times and cultures. He is also not saying we keep the law. We don't. We break it constantly and offer excuses. The fact that we make excuses is itself evidence that we know the law applies to us.</p>
+        <p><strong>For a Christian, this matters.</strong> Romans 2 says the law is "written on the hearts" of even those who have never read Scripture (Romans 2:14–15). Lewis is not the first to make this argument — he is following Paul, and Paul is following the structure of Genesis 1, where humans are made in the image of God. The moral intuition you have when someone treats you unfairly is not a cultural artifact. It is a fingerprint of the Creator on your conscience. Lewis is just inviting you, gently, to take seriously what that fingerprint implies.</p>
+    </div>
+
+    <!-- THE TEXT (chapter summary) -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>The Text — Chapter Summary</h3>
+                <span class="depth depth-all">everyone</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Lewis's chapter has four moves: (1) the quarrel observation, (2) the universality of moral standards, (3) the description vs. prescription distinction, (4) the implication of a Moral Lawgiver.</div>
+
+            <p><em>Note: this is a summary of Lewis's argument, not a reproduction of the chapter. <strong>Read the chapter itself</strong> — it is short, vivid, and Lewis's own writing is irreplaceable. This study works alongside the actual text, not in place of it.</em></p>
+
+            <h4>The opening observation: the quarrel</h4>
+            <p><strong>Lewis begins with two people fighting.</strong> Listen to any quarrel, he says, and you will hear something interesting. People do not just say "I don't like what you did." They say "It's not fair," "You promised," "How would you like it?" — they appeal to <em>a standard</em>. And the person being accused does not say, "Forget your standard," but rather, "It's different in my case because…" The accused appeals to the same standard, but tries to explain why their behavior fits inside it. Lewis says this small observation reveals an enormous fact: every human being assumes the existence of a shared moral law and expects others to recognize it.</p>
+
+            <h4>The universality of the moral law</h4>
+            <p><strong>Lewis next argues that this moral standard is broadly the same across cultures.</strong> Different societies have differed in detail — some have praised treachery, some have praised loyalty — but no society, he says, has ever genuinely admired cowardice in the face of danger or treachery against one's own friends as a virtue. The variations are real but are dwarfed by the underlying agreement. This is what Lewis calls the "Law of Human Nature" — a moral law that operates across humanity in a way roughly parallel to how the laws of physics operate across the material world.</p>
+
+            <h4>Description versus prescription</h4>
+            <p><strong>Then Lewis makes his key philosophical move.</strong> The "law of gravity" describes how stones <em>do</em> fall. But the "Law of Human Nature" is different — it does not describe how people <em>do</em> behave. It describes how they <em>ought</em> to behave. People break the moral law constantly. The fact that they break it does not disprove it; it confirms that the law exists and is a standard <em>above</em> behavior, not just a summary <em>of</em> behavior. Lewis points out that nobody apologizes for the law of gravity making their stone fall. But people apologize for breaking the moral law. The very existence of apology, excuse-making, and the language of fairness presupposes a standard prior to and above the actual behavior.</p>
+
+            <h4>What this implies</h4>
+            <p><strong>Lewis closes the chapter with the implication.</strong> If there is a Law of Human Nature that is genuinely above human behavior — that prescribes rather than describes — then it cannot be merely a fact about human biology, sociology, or psychology. Those fields can tell us how humans <em>are</em>; they cannot tell us how humans <em>ought to be</em>. The moral law points beyond itself to a Moral Lawgiver. Lewis does not yet name that Lawgiver as the God of Christianity in this chapter — that comes later in Book 1. He is simply pointing at the doorway. The reader is left standing at the threshold.</p>
+
+            <p style="margin-top:1.5rem"><em>To read Lewis's chapter directly: <a href="https://www.amazon.com/Mere-Christianity-C-S-Lewis/dp/0060652926" target="_blank">Mere Christianity (paperback edition)</a>, <a href="https://www.harpercollins.com/products/mere-christianity-c-s-lewis" target="_blank">HarperCollins page</a>, or check your church library. The chapter is approximately 8 pages.</em></p>
+
+            <span class="notes-label">My notes — The Text</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- DISCUSSION QUESTIONS — ALL 5 ABOVE THE FOLD FOR 60-MIN DISCUSSION -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Discussion Questions (all 5 — for ~60 min discussion)</h3>
+                <span class="depth depth-all">everyone</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">A 1.5-hour meeting gives you ~60 minutes of actual discussion. All 5 questions are sized to fit. Two more questions (vv. 4 advanced + 5 advanced) sit below the fold for groups with extra time or for personal reflection.</div>
+
+            <ol class="q-list">
+                <li>Lewis opens with two people quarreling, both appealing to "fair play." When was the last time you said or thought "That's not fair"? What standard were you assuming the other person already knew? <span class="q-tag q-obs">observation</span></li>
+
+                <li>Lewis argues that across cultures the moral standard is "broadly the same" — different in details but not different at the foundation. Do you think that's still true today, when our culture talks about morality as personal or relative? Where does Lewis's claim hold up, and where does it strain? <span class="q-tag q-int">interpretation</span></li>
+
+                <li>Lewis distinguishes between the law of gravity (which <em>describes</em> how stones fall) and the moral law (which <em>prescribes</em> how people ought to behave). Why is this distinction the load-bearing wall of his whole argument? What goes wrong if you collapse the two? <span class="q-tag q-int">interpretation</span></li>
+
+                <li>Romans 2:14–15 says people who don't have the written law "show that the work of the law is written on their hearts" and their conscience bears witness. How does this passage from Paul connect to Lewis's argument? Is Lewis saying anything Paul didn't say first? <span class="q-tag q-app">application</span></li>
+
+                <li>Pick one place in your everyday life — at work, at home with your spouse or kids, with friends, on the road — where you regularly appeal to a standard of fair play. How does Lewis's argument change how you understand that appeal? What would it look like this week to take that standard more seriously as evidence of God's moral law? <span class="q-tag q-app">application</span></li>
+            </ol>
+
+            <span class="notes-label">My notes — Discussion</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- GOSPEL GLIMPSES -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Gospel Glimpses</h3>
+                <span class="depth depth-all">everyone</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Lewis's argument from moral law is a doorway, not the destination. The destination is the gospel — and the moral law is what makes the gospel necessary.</div>
+
+            <h4>The moral law diagnoses; only the gospel cures</h4>
+            <p><strong>Lewis's chapter is, in effect, a diagnosis.</strong> He is showing the reader that they are accountable to a moral standard they cannot escape — and (in the chapters that follow this one) that they have not kept it. This diagnosis is precisely the work Paul does in Romans 1–3, which culminates in the most damning summary in Scripture: <em>"None is righteous, no, not one"</em> (Romans 3:10). Lewis is preparing the ground for the gospel. The moral law shows you that you are guilty. Christ alone does anything about it.</p>
+
+            <h4>"Written on their hearts" — Paul before Lewis</h4>
+            <p><strong>Lewis's argument is not novel.</strong> Paul made it first, in Romans 2:14–15:</p>
+            <div class="verse">
+                "For when Gentiles, who do not have the law, by nature do what the law requires, they are a law to themselves, even though they do not have the law. They show that the work of the law is written on their hearts, while their conscience also bears witness, and their conflicting thoughts accuse or even excuse them…"
+                <span class="ref">— Romans 2:14–15 (ESV)</span>
+            </div>
+            <p>Paul says that the Gentiles — who never had Moses, never read the Hebrew Scriptures, never set foot in the temple — nonetheless have the moral law "written on their hearts." Their conscience accuses or excuses. Lewis's "Law of Human Nature" is, almost word for word, what Paul is describing. The Christian student of Lewis is reading Paul through a 20th-century philosopher.</p>
+
+            <h4>The gospel as the rescue from the standard you cannot keep</h4>
+            <p><strong>Once Lewis has shown that the moral law is real and that you cannot keep it,</strong> the gospel becomes urgent. Romans 3:23–24 says: "all have sinned and fall short of the glory of God, and are justified by his grace as a gift, through the redemption that is in Christ Jesus." The gospel is not "be a better person." The gospel is that Christ kept the moral law perfectly in your place, took the penalty for your breaking of it, and gives you His righteousness as a gift. Lewis spends the rest of <em>Mere Christianity</em> walking the reader from the doorway of the moral law into the room of the gospel.</p>
+
+            <div class="takeaways">
+                <h5>Three takeaways</h5>
+                <ul>
+                    <li>Lewis's "Law of Human Nature" is Paul's "law written on their hearts" (Romans 2) in modern dress.</li>
+                    <li>The moral law diagnoses the disease; only the gospel cures it.</li>
+                    <li>The point of arguing for the moral law is not to make people moral. It is to make them realize they need a Savior.</li>
+                </ul>
+            </div>
+
+            <span class="notes-label">My notes — Gospel Glimpses</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- RESOURCES (above fold for 60-min) -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Resources and Links</h3>
+                <span class="depth depth-all">everyone</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 10px 0; border-bottom: 1px solid #ccc;"><strong><a href="https://www.amazon.com/Mere-Christianity-C-S-Lewis/dp/0060652926" target="_blank">Mere Christianity (paperback)</a></strong> — Inexpensive HarperCollins edition. Most Christian bookstores carry it; church libraries usually have copies.</li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #ccc;"><strong><a href="https://www.biblegateway.com/passage/?search=Romans+2&version=ESV" target="_blank">Romans 2 (ESV)</a></strong> — The Pauline passage Lewis is implicitly drawing on. Read verses 12–16 alongside the chapter.</li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #ccc;"><strong><a href="https://www.thegospelcoalition.org/" target="_blank">The Gospel Coalition</a></strong> — Search "Lewis Mere Christianity" for evangelical engagements with Lewis's apologetic.</li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #ccc;"><strong><a href="https://www.cslewisinstitute.org/" target="_blank">The C.S. Lewis Institute</a></strong> — Long-running evangelical organization devoted to Lewis's thought; deep article archive.</li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #ccc;"><strong><a href="https://www.desiringgod.org/" target="_blank">Desiring God</a></strong> — John Piper has written and spoken extensively about Lewis. Useful for evangelical readers wanting a careful theological assessment.</li>
+                <li style="padding: 10px 0;"><strong><a href="https://lausanne.org/content/covenant/lausanne-covenant" target="_blank">The Lausanne Covenant</a></strong> — The 1974 evangelical statement that anchors the baseline theological lens used in this study.</li>
+            </ul>
+
+            <span class="notes-label">My notes — Resources</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- ============= FOLD DIVIDER ============= -->
+    <div class="fold-divider">
+        <span class="fold-arrow">▼ ▼ ▼</span>
+        FURTHER DEPTH BELOW
+        <br>
+        <span style="font-weight:400;font-size:0.82rem">Open these sections if your group has more time, or for personal study during the week.</span>
+        <span class="fold-arrow">▼ ▼ ▼</span>
+    </div>
+
+    <!-- ADDITIONAL DEEPER QUESTIONS -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Two More Discussion Questions (for personal study or longer meetings)</h3>
+                <span class="depth depth-mid">going deeper</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <ol class="q-list" start="6">
+                <li>Some modern thinkers (e.g., evolutionary psychologists) argue that what Lewis calls the "Law of Human Nature" is actually a product of evolutionary survival pressure — herd instinct dressed up in moral language. How would Lewis respond? Where does that response succeed? Where does it leave more work to do? <span class="q-tag q-int">interpretation</span></li>
+
+                <li>If Lewis is right that the moral law is universal and points to a Lawgiver, what does that mean for someone who claims to be agnostic or atheist? Lewis would say they are "betraying" something they actually know. How can a Christian make that point with grace, in a culture that strongly resists the claim? <span class="q-tag q-app">application</span></li>
+            </ol>
+
+            <span class="notes-label">My notes — Additional Questions</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- WHOLE-BIBLE CONNECTIONS -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Whole-Bible Connections</h3>
+                <span class="depth depth-mid">going deeper</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Lewis's argument is anchored deep in Scripture — image of God in Genesis, conscience in Romans, the law-Christ relationship in Galatians.</div>
+
+            <h4>Image of God — the foundation of moral capacity</h4>
+            <p><strong>Genesis 1:26–27</strong> establishes that humans are made "in the image of God." This is the foundation Lewis is implicitly drawing on. Humans alone, of all creatures, have moral self-awareness — the capacity to recognize right and wrong, to feel guilt, to make excuses, to demand fairness. This capacity is part of the <em>imago Dei</em>. Lewis's "Law of Human Nature" is downstream of this doctrine: humans recognize a moral standard because they bear God's image and reflect (however dimly) His moral character.</p>
+
+            <h4>The fall and the conscience</h4>
+            <p><strong>Genesis 3</strong> records humanity's fall, but it does not erase the moral knowledge — it disorders it. Humans still recognize right and wrong (Adam and Eve hide because they know they have done wrong) but now their wills are bent toward self-justification. Lewis observes precisely this in chapter 1: people break the law and then make excuses. The fall did not erase the law from the human heart; it gave humans a reason to lie about it.</p>
+
+            <h4>Romans 1–3 — the law convicts</h4>
+            <p><strong>Paul's argument in Romans 1–3</strong> is structurally identical to Lewis's. Paul shows that Gentiles know God exists from creation (Romans 1:18–20), know the moral law from conscience (Romans 2:14–15), but suppress that knowledge in unrighteousness. Jews have the written law, but break it. Both groups are accountable, both fall short, and the conclusion is universal: <em>"None is righteous, no, not one"</em> (Romans 3:10). Lewis is doing in modern dress what Paul did in apostolic prose.</p>
+
+            <h4>The law and the gospel — Galatians 3:24</h4>
+            <p><strong>Paul says the law "was our guardian until Christ came"</strong> (Galatians 3:24). The moral law's job is not to save anyone — no one keeps it. Its job is to drive the lawbreaker to Christ. Lewis ends his chapter at the doorway because that is exactly where the moral law leaves a person: confronted with a standard they cannot keep, in need of a rescue they cannot provide. The chapters that follow in <em>Mere Christianity</em> walk the reader through that doorway and into the room where Christ is waiting.</p>
+
+            <div class="takeaways">
+                <h5>Three takeaways</h5>
+                <ul>
+                    <li>The moral law is not external — it is part of bearing God's image (Genesis 1:26–27).</li>
+                    <li>The fall did not erase moral knowledge; it disordered the will and made humans excuse-makers (Genesis 3).</li>
+                    <li>The law's purpose, biblically and in Lewis's argument, is to drive sinners to Christ (Galatians 3:24).</li>
+                </ul>
+            </div>
+
+            <span class="notes-label">My notes — Whole-Bible Connections</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- HISTORICAL & CULTURAL BACKGROUND -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Historical and Cultural Background</h3>
+                <span class="depth depth-mid">going deeper</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Lewis wrote these chapters as wartime BBC broadcasts in 1941–1944, addressing a British public living through bombs, rationing, and the genuine possibility of Nazi conquest.</div>
+
+            <h4>The wartime BBC broadcasts</h4>
+            <p><strong>What became <em>Mere Christianity</em> began as four series of radio talks broadcast on the BBC during World War II.</strong> Lewis was approached by the BBC's Religious Broadcasting director, James Welch, who was looking for a popular Christian apologist to speak to a British nation under existential threat. Lewis delivered the talks in 1941 ("Right and Wrong as a Clue to the Meaning of the Universe" — which became Book 1), 1942, 1943, and 1944. The chapter we're studying was originally one of those broadcasts.</p>
+
+            <h4>The audience: a secularizing Britain</h4>
+            <p><strong>Lewis's audience was not the church.</strong> It was the British general public — many of whom had drifted from Christian belief over the previous generation, lived through the trauma of the First World War, and were now facing a second one. They were not eager for sermons. They were eager for a thoughtful, intellectually honest case that did not insult their intelligence. Lewis's pastoral genius was to begin where his hearers actually were — quarreling with their neighbors, complaining about unfairness — and walk them slowly toward the gospel.</p>
+
+            <h4>Lewis's own background</h4>
+            <p><strong>Lewis (1898–1963) was an Oxford and Cambridge professor of medieval and Renaissance literature,</strong> not a theologian. He came to Christian faith in 1931 after a long intellectual journey through atheism and idealism. His apologetic style is shaped by his literary training — he reasons by analogy, uses concrete images, builds arguments slowly from common observations toward larger conclusions. The chapter we're studying is exemplary of this method.</p>
+
+            <h4>Why Lewis still works for evangelical readers today</h4>
+            <p><strong>Lewis was an Anglican,</strong> not an evangelical in the modern sense, and his theology has points where careful evangelical readers will want to differ (his sacramental theology, his views on purgatory in <em>The Great Divorce</em>, his openness to certain kinds of universalism in <em>The Last Battle</em>). But on the doctrines that matter most for the moral-law argument — the reality of God, the authority of Scripture, the divinity and bodily resurrection of Christ, the necessity of the cross — Lewis stands firmly within the evangelical confession affirmed by the <a href="https://lausanne.org/content/covenant/lausanne-covenant" target="_blank">Lausanne Covenant</a>. His argument from moral law has been used by every evangelical apologetic tradition since: <a href="https://www.dts.edu" target="_blank">Dallas Theological Seminary</a>, <a href="https://www.thegospelcoalition.org/" target="_blank">The Gospel Coalition</a>, the <a href="https://www.cslewisinstitute.org/" target="_blank">C.S. Lewis Institute</a>, and countless others.</p>
+
+            <div class="takeaways">
+                <h5>Three takeaways</h5>
+                <ul>
+                    <li>Lewis was speaking to wartime Britain — a secularizing, traumatized public, not a church.</li>
+                    <li>His method is to begin where unbelievers actually live and walk them slowly toward the gospel.</li>
+                    <li>Lewis is Anglican, not evangelical in the strict sense — but on the load-bearing doctrines, he is solidly within the Lausanne baseline.</li>
+                </ul>
+            </div>
+
+            <span class="notes-label">My notes — Historical Background</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- DEEP DIVE -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Deep Dive: Evaluating Lewis's Argument</h3>
+                <span class="depth depth-deep">seminary depth</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Lewis's moral-law argument is one of the most-discussed apologetic moves of the 20th century. It has strengths, weaknesses, and a long history of evangelical engagement.</div>
+
+            <h4>The argument's strengths</h4>
+            <p><strong>First, Lewis grounds his case in observation, not abstraction.</strong> He starts with a quarrel — something every reader has experienced — rather than with metaphysics. This is rhetorically powerful and pedagogically wise. It also matches the biblical pattern: Romans 2 grounds moral knowledge in conscience and observable behavior, not in theory.</p>
+            <p><strong>Second, the description-versus-prescription distinction is genuinely important.</strong> Many modern attempts to ground morality in evolutionary psychology, sociology, or game theory fail precisely because they describe how moral behavior emerged without explaining why we feel obligated to follow standards even when we don't want to. Lewis's distinction has held up well across decades of secular philosophical engagement.</p>
+            <p><strong>Third, Lewis's argument is humble.</strong> He does not claim that the moral law proves the God of the Bible — only that it points beyond itself to <em>some</em> Lawgiver. The further work of identifying that Lawgiver as the God of Israel and the Father of Jesus Christ is taken up in subsequent chapters. This staged approach respects the reader's actual epistemic position.</p>
+
+            <h4>The argument's weaknesses (and how Christians have responded)</h4>
+            <p><strong>The biggest objection</strong> comes from evolutionary psychology: what Lewis calls the universal moral law is actually the product of social evolution — herd instinct dressed up in moral language. Humans evolved to cooperate, the argument runs, and "fairness" intuitions are an evolutionary adaptation, not evidence of a Lawgiver.</p>
+            <p>Lewis anticipates this in chapter 2 ("Some Objections"). His response is sharp: even if you grant that moral intuitions evolved, that explains how we came to have them but not why we ought to obey them. An evolutionary description of how the urge to be honest emerged does not establish that we ought to be honest. The "ought" cannot be derived from the "is" — a point David Hume famously made in the 18th century, and that has only become more pressing in modern moral philosophy.</p>
+            <p><strong>A second objection</strong> comes from cultural diversity: moral standards vary widely across cultures, so the "universal moral law" Lewis claims may be illusion. Lewis grants real variation but argues — rightly — that the variations are dwarfed by the underlying agreement. Anthropologically, this is broadly defensible, though some scholars push back. The Christian engaging this critique has resources: Romans 2 grants the same point Lewis grants (Gentiles "by nature do what the law requires") while also grants real moral darkness (Romans 1:21–32). The biblical position is not "everyone everywhere agrees on every moral question" but "everyone everywhere knows enough to be accountable."</p>
+
+            <h4>Where evangelical readers extend Lewis</h4>
+            <p><strong>Conservative evangelical apologists have generally welcomed Lewis's moral-law argument as a useful first step,</strong> while pushing further than Lewis does in the chapter. Where Lewis leaves the reader at "some Moral Lawgiver," evangelicals like Norman Geisler, Ravi Zacharias, J.P. Moreland, and William Lane Craig have built fuller arguments for theism and Christianity on Lewis's foundation. The <a href="https://www.cslewisinstitute.org/" target="_blank">C.S. Lewis Institute</a> is the leading evangelical organization devoted to extending Lewis's work in this direction.</p>
+            <p><strong>Within the SBC/DTS toggle:</strong> Dallas Theological Seminary's apologetic tradition (Sproul, Geisler, Howe) has used Lewis's moral-law argument as a starting move within a classical evidential apologetic. The Southern Baptist Convention's apologetic tradition has been similarly receptive, though more recent SBC voices in presuppositional apologetics (following Cornelius Van Til) prefer to begin with the authority of Scripture rather than the moral intuition of unbelievers. Both readings remain within the Lausanne baseline.</p>
+
+            <h4>Lewis's place in evangelical apologetic literature</h4>
+            <p><strong>Major works engaging Lewis seriously:</strong> Norman Geisler's <em>Christian Apologetics</em>; Alvin Plantinga's <em>Warranted Christian Belief</em>; J.P. Moreland's <em>Scaling the Secular City</em>; David Bentley Hart's <em>Atheist Delusions</em>; Tim Keller's <em>The Reason for God</em>. Keller in particular treats Lewis as a model and explicitly extends Lewis's moral-law argument for a 21st-century audience.</p>
+
+            <div class="takeaways">
+                <h5>Three takeaways</h5>
+                <ul>
+                    <li>Lewis's strength is grounding the argument in observation rather than metaphysics — and matching the pattern of Romans 2.</li>
+                    <li>The main modern objection (evolutionary psychology) does not actually overturn Lewis; it explains how moral intuitions emerged without explaining why we ought to obey them.</li>
+                    <li>Lewis's chapter is a first step. Evangelical apologetics builds further from here — but the foundation has held up for 80 years.</li>
+                </ul>
+            </div>
+
+            <span class="notes-label">My notes — Deep Dive</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- THEOLOGICAL SOUNDINGS -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Theological Soundings</h3>
+                <span class="depth depth-deep">seminary depth</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Lewis's argument touches three doctrines: general revelation, the imago Dei, and the noetic effects of sin.</div>
+
+            <h4>General revelation</h4>
+            <p><strong>Lewis is doing apologetics from <em>general revelation</em></strong> — God's self-disclosure in creation, conscience, and the moral order, available to all humans regardless of access to Scripture. Reformed theology has historically emphasized general revelation in works like the Westminster Confession of Faith (Chapter 1) and the writings of John Calvin (<em>Institutes</em> 1.3–5). Conservative evangelical theology agrees: <a href="https://bfm.sbc.net/bfm2000/" target="_blank">BF&M 2000</a> Article I affirms that Scripture is the supreme written revelation, while implicitly recognizing the broader testimony of creation that Romans 1 describes. Lewis's chapter is general-revelation apologetics in popular form.</p>
+
+            <h4>The imago Dei</h4>
+            <p><strong>Lewis's argument depends on humans being morally distinct creatures.</strong> Animals do not appeal to fairness; humans do. This distinction is grounded in Genesis 1:26–27 — humanity's creation in the image of God. The <em>imago Dei</em> includes (across the major evangelical traditions) rationality, moral capacity, relational personhood, and dominion. Lewis's "Law of Human Nature" is a phenomenological exploration of the moral component of the <em>imago Dei</em>. The Lausanne Covenant affirms human dignity grounded in the image of God; the SBC/DTS toggle agrees.</p>
+
+            <h4>The noetic effects of sin</h4>
+            <p><strong>If humans are morally aware,</strong> why don't we live up to it? The doctrine of the noetic effects of sin (the impact of the fall on human knowing) explains the gap. Total depravity, in Reformed-Baptist theology (cf. <a href="https://www.opc.org/wcf.html" target="_blank">Westminster Confession of Faith</a> 6 and <a href="https://bfm.sbc.net/bfm2000/" target="_blank">BF&M 2000</a> Article III), does not mean humans are as bad as they could be. It means every faculty — including moral knowledge — is corrupted by sin. Humans know enough of the moral law to be accountable (Romans 1:20, 2:14–15) but not enough, on their own, to be saved. Lewis's chapter tracks this exactly: the law is real, knowable, and broken. The reader is left needing rescue.</p>
+
+            <h4>Consistency with biblical inerrancy and the Lausanne baseline</h4>
+            <p><strong>Lewis's chapter does not directly engage with Scripture's authority,</strong> but the argument is fully consistent with biblical inerrancy. Lewis is not deriving theology from natural reason in opposition to Scripture; he is showing that natural reason and conscience point in the direction Scripture later confirms. The <a href="https://library.dts.edu/Pages/TL/Special/ICBI_1.pdf" target="_blank">Chicago Statement on Biblical Inerrancy</a> affirms that Scripture is the final written authority while recognizing the witness of creation and conscience. Lewis's argument is propaedeutic — preparing the way — not a competitor to special revelation.</p>
+
+            <div class="takeaways">
+                <h5>Three takeaways</h5>
+                <ul>
+                    <li>Lewis is doing general-revelation apologetics — moving from creation/conscience toward the God who is named in Scripture.</li>
+                    <li>His argument depends on the imago Dei and is consistent with the noetic-effects-of-sin doctrine across evangelical traditions.</li>
+                    <li>Lewis prepares the way for special revelation; he does not replace it. The Bible remains supreme.</li>
+                </ul>
+            </div>
+
+            <span class="notes-label">My notes — Theological Soundings</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- LEADER NOTES -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Leader Notes</h3>
+                <span class="depth depth-mid">for the study leader</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">A 1.5-hour meeting with ~60 minutes of discussion. Lewis is dense; pace deliberately. One sensitive moment: the connection to evolutionary psychology can become heated if you have skeptics or scientists in the group.</div>
+
+            <h4>Pacing for a 1.5-hour meeting (~60 min discussion)</h4>
+            <p><strong>A workable rhythm:</strong> 5 minutes opening prayer; 10 minutes reading the TLDR and Bringing It Home aloud; 10 minutes walking through the chapter summary together (especially helpful for any group member who didn't read Lewis's chapter beforehand); 30 minutes on the five discussion questions (about 6 minutes each); 5 minutes prayer and close. If your group is dense and engaged, you may run over — that's fine. The two below-the-fold questions can carry into the next meeting or personal reflection.</p>
+
+            <div class="leader-note">
+                <strong>Leader tip — make sure people have read the chapter.</strong> This study assumes group members have read Lewis's actual chapter (about 8 pages). If half the group hasn't, the discussion will be thin. Either send the chapter as a PDF/photocopy a week ahead, or read it aloud as a group at the start of the meeting (it will take 12–15 minutes — adjust pacing accordingly).
+            </div>
+
+            <h4>Sensitive topic prep</h4>
+            <p><strong>Two threads can land hard.</strong> First, Question 2 asks whether Lewis's claim about universal moral standards holds in our culture today. Some group members will feel that modern relativism is the right diagnosis of our moment; others will push back hard. Don't let the discussion become abstract — ground it in specific examples. Second, Question 6 (below the fold) addresses evolutionary psychology directly. If you have scientists or scientifically-minded skeptics in your group, this conversation can become technical and sometimes heated. Be prepared to redirect: the central question is not whether evolution is true; it is whether evolution can ground a moral "ought" or only describe an "is."</p>
+
+            <div class="leader-note">
+                <strong>Leader tip — closing the meeting.</strong> Consider closing by reading Romans 2:14–15 and Romans 3:23–24 in succession. Lewis is doing the work of Romans 1–3 in modern dress. Reading the actual passage at the end ties his argument back to its scriptural source.
+            </div>
+
+            <h4>Backup discussion starters</h4>
+            <p><strong>If discussion stalls:</strong> "Where in our culture right now do you see appeals to fair play that assume a shared standard?" or "What's an area where you've heard people say 'morality is personal' — and what does Lewis's argument say about that?" or "If a coworker said to you, 'Right and wrong are just opinions,' how would you respond using Lewis's reasoning?"</p>
+
+            <span class="notes-label">My notes — Leader Notes</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER (FINGERPRINT) -->
+    <div class="footer fingerprint">
+        <p><strong>Generated by:</strong> [study leader's name — fill in when sharing]<br>
+        <strong>Generated on:</strong> 2026-05-01 · <strong>Version:</strong> V1 · <strong>Tool:</strong> Study Guide Generator v1.3 · <strong>Canonical source:</strong> <a href="https://github.com/alexmagginetti/study-guide-generator" target="_blank">github.com/alexmagginetti/study-guide-generator</a></p>
+        <p>The Study Guide Generator prompt kit is © 2026 Alex Magginetti. All rights reserved; shared by direct permission only. The generated study above is the work of the user named above, who is responsible for its content, for personal and local-church ministry use.</p>
+        <p><strong>Mere Christianity</strong> is © 1952 by C.S. Lewis Pte. Ltd.; rights administered by HarperCollins Publishers. This study summarizes Lewis's argument and quotes only short fair-use excerpts. Group members should read the chapter directly.</p>
+        <p>Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), copyright © 2001 by Crossway. Used by permission. All rights reserved.</p>
+        <p>The Study Guide Generator does not distribute Bible text or copyrighted Christian-book text. Each work's text remains the copyright of its publisher. The kit's author makes no claim to any work's copyright and assumes no liability for the user's choice of source material.</p>
+        <p><em>This study was AI-generated and reviewed by a separate AI quality-assurance pass (Section F of the generator). The QA pass is mandatory and cannot be skipped. Verify all Scripture references against your Bible. Read Lewis's chapter directly. Not endorsed by any specific church or seminary.</em></p>
+    </div>
+
+    <script>
+        function toggle(header){header.classList.toggle('open');header.nextElementSibling.classList.toggle('show')}
+        function adjustText(delta){
+            const root=document.documentElement;
+            let scale=parseFloat(root.style.getPropertyValue('--text-scale'))||1;
+            if(delta===0){scale=1;}
+            else{scale=Math.max(0.85,Math.min(1.5,scale+(delta*0.1)));}
+            root.style.setProperty('--text-scale',scale);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor noise
+.vscode/
+.idea/
+*.swp
+*~
+
+# Claude Code agent state (sessions, worktrees, settings)
+.claude/
+
+# Office temp files
+~$*.docx
+~$*.pptx
+~$*.xlsx
+
+# Local-only working notes
+NOTES_LOCAL.md
+scratch/
+
+# AI working artifacts (the for_gemini/ folder is intentional and should be tracked, but generated responses live alongside it)
+for_gemini/gemini_response_*.md

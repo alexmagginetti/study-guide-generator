@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <title>Romans 8 — Life in the Spirit (Women's, 30-min Discussion)</title>
+    <style>
+        :root { --text-scale: 1; }
+        * { box-sizing: border-box; margin: 0; padding: 0 }
+        html { font-size: calc(16px * var(--text-scale)); }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #1a1a1a; line-height: 1.8; width: 100%; max-width: 100%; margin: 0; padding: 24px 5vw; background: #fff; font-size: 1rem; orphans: 3; widows: 3; box-sizing: border-box; }
+        @media (prefers-color-scheme: dark) { body { background: #1a1a1a; color: #e8e8e8 } }
+
+        /* Top controls */
+        .top-controls { display: flex; gap: 8px; justify-content: flex-end; align-items: center; margin: 0 0 1rem; flex-wrap: wrap; }
+        .text-controls { display: flex; align-items: center; gap: 4px; padding: 6px 10px; border: 2px solid #888; border-radius: 10px; background: #f5f5f5; font-size: 0.85rem; }
+        @media (prefers-color-scheme: dark) { .text-controls { background: #2a2a2a; border-color: #666 } }
+        .text-controls span { color: #444; font-weight: 600; margin-right: 2px; font-size: 0.8rem; }
+        @media (prefers-color-scheme: dark) { .text-controls span { color: #aaa } }
+        .text-btn { font-family: inherit; font-weight: 600; padding: 6px 12px; border-radius: 6px; border: 1px solid #888; background: #fff; color: #1a1a1a; cursor: pointer; min-width: 36px; }
+        .text-btn:hover { background: #e8f0fe; border-color: #1a56db; }
+        @media (prefers-color-scheme: dark) { .text-btn { background: #1e1e1e; color: #e8e8e8; border-color: #666 } .text-btn:hover { background: #1e3a5f; border-color: #7eb8ff } }
+        .text-btn.small { font-size: 0.75rem; }
+        .text-btn.medium { font-size: 1rem; }
+        .text-btn.large { font-size: 1.2rem; }
+
+        .print-btn { font-size: 0.85rem; font-weight: 600; padding: 8px 16px; border-radius: 10px; border: 2px solid #888; background: #fff; color: #1a1a1a; cursor: pointer; font-family: inherit; }
+        .print-btn:hover { background: #e8f0fe; border-color: #1a56db; }
+        @media (prefers-color-scheme: dark) { .print-btn { background: #1e1e1e; color: #e8e8e8; border-color: #666 } .print-btn:hover { background: #1e3a5f; border-color: #7eb8ff } }
+
+        /* Nav */
+        .study-nav { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 1.5rem }
+        .ch-btn { font-size: 0.8rem; padding: 6px 14px; border-radius: 8px; border: 2px solid #ccc; background: #f5f5f5; color: #555; cursor: default; font-family: inherit; }
+        .ch-btn.active { background: #e8f0fe; color: #1a56db; border-color: #1a56db; font-weight: 600; }
+        @media (prefers-color-scheme: dark) { .ch-btn { background: #2a2a2a; color: #aaa; border-color: #555 } .ch-btn.active { background: #1e3a5f; color: #7eb8ff; border-color: #7eb8ff } }
+
+        /* Title */
+        .study-title { font-size: 1.6rem; font-weight: 700; margin: 0 0 6px; line-height: 1.4; }
+        .study-subtitle { font-size: 0.85rem; color: #666; margin: 0 0 1.5rem; }
+        @media (prefers-color-scheme: dark) { .study-subtitle { color: #aaa } }
+
+        /* Study inputs */
+        .study-inputs { background: #f0f4f8; border-left: 4px solid #1a56db; padding: 14px 18px; margin: 0 0 2rem; font-size: 0.85rem; color: #404040; border-radius: 0 10px 10px 0; }
+        @media (prefers-color-scheme: dark) { .study-inputs { background: #252b33; color: #c0c0c0; border-left-color: #7eb8ff } }
+        .study-inputs strong { color: #1a56db; font-weight: 700 }
+        @media (prefers-color-scheme: dark) { .study-inputs strong { color: #7eb8ff } }
+        .study-inputs ul { list-style: none; padding: 0; margin: 6px 0 0 }
+        .study-inputs li { padding: 3px 0 }
+
+        /* Always-visible TLDR */
+        .tldr { background: #f8f9fa; border: 2px solid #888; border-radius: 14px; padding: 1.5rem 1.75rem; margin: 0 0 1.5rem }
+        @media (prefers-color-scheme: dark) { .tldr { background: #252525; border-color: #666 } }
+        .tldr h2 { font-size: 1.05rem; font-weight: 700; margin: 0 0 1rem; color: #1a56db; }
+        @media (prefers-color-scheme: dark) { .tldr h2 { color: #7eb8ff } }
+        .tldr ul { list-style: none; padding: 0 }
+        .tldr li { font-size: 0.95rem; color: #2a2a2a; padding: 6px 0 6px 24px; position: relative }
+        @media (prefers-color-scheme: dark) { .tldr li { color: #d0d0d0 } }
+        .tldr li::before { content: ""; position: absolute; left: 0; top: 14px; width: 10px; height: 10px; border-radius: 50%; background: #1a56db }
+
+        /* Bringing It Home highlight */
+        .home-section { background: #fff; border: 3px solid #1a56db; border-radius: 14px; padding: 1.5rem 1.75rem; margin: 0 0 1.5rem }
+        @media (prefers-color-scheme: dark) { .home-section { background: #1e1e1e; border-color: #7eb8ff } }
+        .home-section h2 { font-size: 1.05rem; font-weight: 700; margin: 0 0 1rem; color: #1a56db; }
+        @media (prefers-color-scheme: dark) { .home-section h2 { color: #7eb8ff } }
+        .home-section p { font-size: 0.95rem; margin: 0 0 0.85rem }
+        .home-section p strong { color: #1a56db; }
+        @media (prefers-color-scheme: dark) { .home-section p strong { color: #7eb8ff } }
+
+        /* Big Idea callout — opens every collapsible section */
+        .big-idea { background: #fff7e6; border-left: 4px solid #f0a500; padding: 12px 16px; margin: 0 0 1rem; border-radius: 0 8px 8px 0; font-weight: 600; font-size: 0.95rem; color: #6b4500; }
+        @media (prefers-color-scheme: dark) { .big-idea { background: #3a2f1a; color: #f0c040; border-left-color: #f0c040 } }
+
+        /* Sub-headings within sections */
+        .section-body h4 { font-size: 1rem; font-weight: 700; color: #1a56db; margin: 1.25rem 0 0.5rem; padding-bottom: 4px; border-bottom: 1px solid #ccc; }
+        @media (prefers-color-scheme: dark) { .section-body h4 { color: #7eb8ff; border-bottom-color: #444 } }
+
+        /* Verse pull-quotes */
+        .verse { font-style: italic; color: #2a2a2a; font-size: 0.95rem; border-left: 4px solid #1a56db; padding: 14px 20px; margin: 16px 0; background: #f0f4f8; border-radius: 0 10px 10px 0; }
+        @media (prefers-color-scheme: dark) { .verse { color: #d8d8d8; background: #252b33; border-left-color: #7eb8ff } }
+        .verse .ref { display: block; margin-top: 8px; font-style: normal; font-weight: 700; color: #1a56db; font-size: 0.85rem; }
+        @media (prefers-color-scheme: dark) { .verse .ref { color: #7eb8ff } }
+
+        /* Takeaways */
+        .takeaways { background: #e8f5e9; border: 2px solid #2e7d32; border-radius: 10px; padding: 14px 18px; margin: 1.25rem 0 0; }
+        @media (prefers-color-scheme: dark) { .takeaways { background: #1a3a2a; border-color: #66bb6a } }
+        .takeaways h5 { font-size: 0.85rem; font-weight: 700; margin: 0 0 8px; color: #1b5e20; text-transform: uppercase; letter-spacing: 0.5px; }
+        @media (prefers-color-scheme: dark) { .takeaways h5 { color: #a5d6a7 } }
+        .takeaways ul { list-style: none; padding: 0; margin: 0 }
+        .takeaways li { font-size: 0.9rem; padding: 4px 0 4px 22px; position: relative; color: #1b5e20; }
+        @media (prefers-color-scheme: dark) { .takeaways li { color: #c8e6c9 } }
+        .takeaways li::before { content: "✓"; position: absolute; left: 0; top: 4px; font-weight: 700; color: #2e7d32; }
+        @media (prefers-color-scheme: dark) { .takeaways li::before { color: #66bb6a } }
+
+        /* Section blocks */
+        .section { border: 2px solid #999; border-radius: 14px; margin: 0 0 18px; overflow: hidden }
+        @media (prefers-color-scheme: dark) { .section { border-color: #555 } }
+        .section-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; user-select: none; background: #fff; transition: background 0.15s }
+        @media (prefers-color-scheme: dark) { .section-header { background: #1e1e1e } }
+        .section-header:hover { background: #f0f4f8 }
+        @media (prefers-color-scheme: dark) { .section-header:hover { background: #252525 } }
+        .section-header h3 { font-size: 1.05rem; font-weight: 700 }
+        .section-header .depth { font-size: 0.75rem; padding: 3px 10px; border-radius: 12px; font-weight: 600 }
+        .depth-all { background: #d4edda; color: #155724 }
+        .depth-mid { background: #fff3cd; color: #856404 }
+        .depth-deep { background: #e8f0fe; color: #1a56db }
+        @media (prefers-color-scheme: dark) { .depth-all { background: #1a3a2a; color: #7dcea0 } .depth-mid { background: #3a3520; color: #f0c040 } .depth-deep { background: #1e3a5f; color: #7eb8ff } }
+        .chevron { font-size: 1rem; color: #555; transition: transform 0.2s }
+        @media (prefers-color-scheme: dark) { .chevron { color: #aaa } }
+        .section-header.open .chevron { transform: rotate(90deg) }
+        .section-body { display: none; padding: 20px; border-top: 2px solid #999; font-size: 0.95rem; }
+        @media (prefers-color-scheme: dark) { .section-body { border-top-color: #555 } }
+        .section-body.show { display: block }
+        .section-body p { margin: 0 0 0.85rem }
+        .section-body p strong:first-child { color: #1a56db; }
+        @media (prefers-color-scheme: dark) { .section-body p strong:first-child { color: #7eb8ff } }
+
+        /* Fold divider */
+        .fold-divider { margin: 2rem 0; padding: 18px 20px; background: #1a1a1a; color: #fff; border-radius: 12px; text-align: center; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; line-height: 1.5; }
+        @media (prefers-color-scheme: dark) { .fold-divider { background: #f0f0f0; color: #1a1a1a } }
+        .fold-divider .fold-arrow { font-size: 1.3rem; display: block; margin: 4px 0; }
+
+        /* Discussion questions */
+        .q-list { list-style: none; padding: 0; counter-reset: q }
+        .q-list li { counter-increment: q; padding: 12px 0 12px 40px; position: relative; font-size: 0.95rem; line-height: 1.7; }
+        .q-list li::before { content: counter(q); position: absolute; left: 0; top: 12px; width: 28px; height: 28px; border-radius: 50%; background: #1a56db; color: #fff; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+        .q-tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 8px; margin-left: 6px; font-weight: 600; }
+        .q-obs { background: #d4edda; color: #155724 }
+        .q-int { background: #fff3cd; color: #856404 }
+        .q-app { background: #e8f0fe; color: #1a56db }
+        @media (prefers-color-scheme: dark) { .q-obs { background: #1a3a2a; color: #7dcea0 } .q-int { background: #3a3520; color: #f0c040 } .q-app { background: #1e3a5f; color: #7eb8ff } }
+
+        /* Leader notes */
+        .leader-note { background: #fff7e6; border: 2px solid #f0a500; border-radius: 10px; padding: 14px 18px; font-size: 0.9rem; color: #6b4500; margin: 12px 0; }
+        @media (prefers-color-scheme: dark) { .leader-note { background: #3a2f1a; border-color: #f0c040; color: #f0c040 } }
+
+        /* Notes section — appears under every section's body */
+        .notes-label { font-size: 0.85rem; font-weight: 700; color: #1a56db; margin: 1.25rem 0 6px; display: block; text-transform: uppercase; letter-spacing: 0.5px; }
+        @media (prefers-color-scheme: dark) { .notes-label { color: #7eb8ff } }
+        .notes-section { background: #fafafa; border: 2px dashed #888; border-radius: 10px; padding: 14px; margin: 0 0 12px; min-height: 90px; font-size: 0.9rem; color: #1a1a1a; line-height: 1.7; font-family: inherit; }
+        .notes-section:focus { outline: 3px solid #1a56db; outline-offset: 2px; background: #fff; }
+        .notes-section:empty::before { content: "Click here to add your notes during the study. Press 'Save to PDF / Print' to keep them — notes do not persist after the browser is closed."; color: #888; font-style: italic; pointer-events: none; }
+        @media (prefers-color-scheme: dark) { .notes-section { background: #252525; border-color: #666; color: #e8e8e8 } .notes-section:focus { background: #1e1e1e } .notes-section:empty::before { color: #888 } }
+
+        /* Greek/Hebrew styling */
+        .greek { font-weight: 600; color: #1a56db }
+        @media (prefers-color-scheme: dark) { .greek { color: #7eb8ff } }
+
+        /* Links */
+        a, a:visited { color: #1a56db; font-weight: 600; }
+        @media (prefers-color-scheme: dark) { a, a:visited { color: #7eb8ff } }
+
+        /* Footer (fingerprint) */
+        .footer { margin: 2.5rem 0 0; padding: 1.25rem 0 0; border-top: 3px solid #999; font-size: 0.78rem; color: #555; }
+        @media (prefers-color-scheme: dark) { .footer { border-top-color: #555; color: #aaa } }
+        .fingerprint p { margin: 0 0 0.6rem; line-height: 1.6 }
+        .fingerprint em { font-style: italic; color: #777 }
+        @media (prefers-color-scheme: dark) { .fingerprint em { color: #888 } }
+
+        /* Print mode */
+        @media print {
+            .section-body { display: block !important }
+            .chevron, .print-btn, .text-controls, .top-controls, .study-nav { display: none !important }
+            .notes-section { border: 1px solid #888; background: #fff; color: #000; page-break-inside: avoid; break-inside: avoid; }
+            .notes-section:empty::before { content: "" }
+            .fold-divider { background: #000 !important; color: #fff !important; page-break-inside: avoid; break-inside: avoid; page-break-after: avoid; }
+            body { max-width: 100%; color: #000; background: #fff; orphans: 4; widows: 4; }
+            .section, .tldr, .home-section, .big-idea, .takeaways, .verse, .leader-note, .study-inputs { page-break-inside: avoid; break-inside: avoid; }
+            .section-header { page-break-after: avoid; break-after: avoid; }
+            .section-body h4 { page-break-after: avoid; break-after: avoid; page-break-before: auto; }
+            h2, h3, h4, h5 { page-break-after: avoid; break-after: avoid; }
+            p { orphans: 3; widows: 3; }
+            .q-list li { page-break-inside: avoid; break-inside: avoid; }
+            @page { margin: 0.75in; @top-center { content: "Romans 8 — Women's Study"; font-size: 9px; color: #999 } }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-controls">
+        <div class="text-controls">
+            <span>TEXT SIZE</span>
+            <button class="text-btn small" onclick="adjustText(-1)" aria-label="Smaller text">A−</button>
+            <button class="text-btn medium" onclick="adjustText(0)" aria-label="Default text size">A</button>
+            <button class="text-btn large" onclick="adjustText(1)" aria-label="Larger text">A+</button>
+        </div>
+        <button class="print-btn" onclick="document.querySelectorAll('.section-body').forEach(b=>b.classList.add('show'));document.querySelectorAll('.section-header').forEach(h=>h.classList.add('open'));window.print()">Save to PDF / Print</button>
+    </div>
+
+    <div class="study-nav">
+        <button class="ch-btn active">Romans 8 — Life in the Spirit</button>
+    </div>
+
+    <div class="study-title">Romans 8:1–39 — Life in the Spirit, Adoption, and the Love That Cannot Be Lost</div>
+    <div class="study-subtitle">Women's group · 1-hour meeting (~30 min discussion) · Full coverage · ESV · Version V2</div>
+
+    <div class="study-inputs">
+        <strong>Study inputs (from input interview):</strong>
+        <ul>
+            <li><strong>Generated by:</strong> [study leader's name — fill in when sharing]</li>
+            <li><strong>Generated on:</strong> 2026-05-01 (timestamp recorded by the generating AI)</li>
+            <li><strong>Version:</strong> V2 (revised: full-width container, generator name/timestamp added, page-break rules tightened for PDF, QA loop now unbreakable)</li>
+            <li><strong>Source:</strong> Romans 8:1–39 (full chapter)</li>
+            <li><strong>Audience:</strong> women's group</li>
+            <li><strong>Group context:</strong> generic (no group-specific application provided — adapt as you go)</li>
+            <li><strong>Translation:</strong> ESV</li>
+            <li><strong>Meeting time:</strong> 1 hour meeting (~30 min discussion content)</li>
+            <li><strong>Coverage:</strong> Full (Deep Dive and Theological Soundings included below the fold)</li>
+            <li><strong>Theological lens:</strong> Conservative Evangelical (<a href="https://lausanne.org/content/covenant/lausanne-covenant" target="_blank">Lausanne Covenant</a>) baseline + <a href="https://bfm.sbc.net/bfm2000/" target="_blank">SBC</a>/<a href="https://www.dts.edu/about/doctrinal-statement/" target="_blank">DTS</a> toggle</li>
+        </ul>
+    </div>
+
+    <div class="tldr">
+        <h2>What you'll learn this week</h2>
+        <ul>
+            <li>Why <em>"there is therefore now no condemnation"</em> (v. 1) is the foundation, not the reward, of the Christian life</li>
+            <li>How the indwelling Holy Spirit empowers a woman to actually put sin to death — without the exhaustion of pure willpower</li>
+            <li>What it means to be a <strong>daughter of God</strong> who can call Him Abba, Father — and why that anchors a woman through real suffering</li>
+            <li>The unbroken chain of Romans 8:29–30 (foreknew, predestined, called, justified, glorified) and what it secures for you</li>
+            <li>Why nothing — not failure, not loss, not the worst news you fear receiving — can separate you from the love of God in Christ</li>
+        </ul>
+    </div>
+
+    <div class="home-section">
+        <h2>Bringing it home — for women</h2>
+        <p><strong>Romans 8 is the chapter most women come back to when life cracks open.</strong> A miscarriage. An empty house after the kids leave. A diagnosis. A husband who has lost his way. A friendship that turned. A reflection in the mirror that stopped feeling like home. Paul writes to Christians in Rome on the edge of Nero's persecution, and what he gives them is not coping advice. He gives them a chain so heavy it cannot be shaken — beginning with no condemnation and ending with no separation.</p>
+        <p><strong>Most women carry an internal scoreboard.</strong> The mothering, the marriage, the work, the body, the home, the friends, the way she shows up at church. On a hard day the scoreboard is brutal. Paul is direct: that scoreboard, in the deepest sense, is not the verdict on you anymore. The verdict was settled when Christ was condemned in your place. The Father is not waiting to disown you when next week falls apart. He is the One who, before the foundation of the world, foreknew you and predestined you to be conformed to the image of His Son. That is unalterable. He is holding on to you.</p>
+        <p><strong>The same Spirit who raised Jesus from the dead lives in you.</strong> Not as religious metaphor — as the most material fact about a Christian woman's life. Romans 8 says the Spirit is what makes the killing of sin actually possible: <em>"if by the Spirit you put to death the deeds of the body, you will live"</em> (v. 13). The bitterness you keep returning to. The comparison that wakes you up at 3 AM. The control you can't seem to let go. You don't white-knuckle these into submission. You walk by the Spirit — you let Him surface what's there, you confess it in its actual shape, and you find, sometimes slowly and sometimes suddenly, that what had a grip on you a year ago has loosened. That is sanctification. It is real.</p>
+        <p><strong>And then there is suffering.</strong> Paul does not pretend Christians are exempt — he says creation groans, we groan, the Spirit groans within us. He says <em>"the sufferings of this present time are not worth comparing with the glory that is to be revealed"</em> (v. 18). That is not denial of pain. It is the long view a woman needs when the short view is unbearable. The chapter ends with a list — tribulation, distress, persecution, famine, nakedness, danger, sword. None of it can pull you out of the love of God in Christ Jesus. None of it. That is what you take into your week.</p>
+    </div>
+
+    <!-- THE TEXT -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>The Text</h3>
+                <span class="depth depth-all">everyone</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Romans 8 is one chapter, four movements: no condemnation (vv. 1–11), adoption as daughters (vv. 12–17), suffering and hope (vv. 18–30), the love that cannot be lost (vv. 31–39).</div>
+
+            <p><strong>Romans 8:1–39 (ESV)</strong></p>
+
+            <p><strong>1</strong> There is therefore now no condemnation for those who are in Christ Jesus. <strong>2</strong> For the law of the Spirit of life has set you free in Christ Jesus from the law of sin and death. <strong>3</strong> For God has done what the law, weakened by the flesh, could not do. By sending his own Son in the likeness of sinful flesh and for sin, he condemned sin in the flesh, <strong>4</strong> in order that the righteous requirement of the law might be fulfilled in us, who walk not according to the flesh but according to the Spirit. <strong>5</strong> For those who live according to the flesh set their minds on the things of the flesh, but those who live according to the Spirit set their minds on the things of the Spirit. <strong>6</strong> For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace. <strong>7</strong> For the mind that is set on the flesh is hostile to God, for it does not submit to God's law; indeed, it cannot. <strong>8</strong> Those who are in the flesh cannot please God.</p>
+
+            <p><strong>9</strong> You, however, are not in the flesh but in the Spirit, if in fact the Spirit of God dwells in you. Anyone who does not have the Spirit of Christ does not belong to him. <strong>10</strong> But if Christ is in you, although the body is dead because of sin, the Spirit is life because of righteousness. <strong>11</strong> If the Spirit of him who raised Jesus from the dead dwells in you, he who raised Christ Jesus from the dead will also give life to your mortal bodies through his Spirit who dwells in you.</p>
+
+            <p><strong>12</strong> So then, brothers, we are debtors, not to the flesh, to live according to the flesh. <strong>13</strong> For if you live according to the flesh you will die, but if by the Spirit you put to death the deeds of the body, you will live. <strong>14</strong> For all who are led by the Spirit of God are sons of God. <strong>15</strong> For you did not receive the spirit of slavery to fall back into fear, but you have received the Spirit of adoption as sons, by whom we cry, "Abba! Father!" <strong>16</strong> The Spirit himself bears witness with our spirit that we are children of God, <strong>17</strong> and if children, then heirs—heirs of God and fellow heirs with Christ, provided we suffer with him in order that we may also be glorified with him.</p>
+
+            <p><strong>18</strong> For I consider that the sufferings of this present time are not worth comparing with the glory that is to be revealed to us. <strong>19</strong> For the creation waits with eager longing for the revealing of the sons of God. <strong>20</strong> For the creation was subjected to futility, not willingly, but because of him who subjected it, in hope <strong>21</strong> that the creation itself will be set free from its bondage to corruption and obtain the freedom of the glory of the children of God. <strong>22</strong> For we know that the whole creation has been groaning together in the pains of childbirth until now. <strong>23</strong> And not only the creation, but we ourselves, who have the firstfruits of the Spirit, groan inwardly as we wait eagerly for adoption as sons, the redemption of our bodies. <strong>24</strong> For in this hope we were saved. Now hope that is seen is not hope. For who hopes for what he sees? <strong>25</strong> But if we hope for what we do not see, we wait for it with patience.</p>
+
+            <p><strong>26</strong> Likewise the Spirit helps us in our weakness. For we do not know what to pray for as we ought, but the Spirit himself intercedes for us with groanings too deep for words. <strong>27</strong> And he who searches hearts knows what is the mind of the Spirit, because the Spirit intercedes for the saints according to the will of God.</p>
+
+            <p><strong>28</strong> And we know that for those who love God all things work together for good, for those who are called according to his purpose. <strong>29</strong> For those whom he foreknew he also predestined to be conformed to the image of his Son, in order that he might be the firstborn among many brothers. <strong>30</strong> And those whom he predestined he also called, and those whom he called he also justified, and those whom he justified he also glorified.</p>
+
+            <p><strong>31</strong> What then shall we say to these things? If God is for us, who can be against us? <strong>32</strong> He who did not spare his own Son but gave him up for us all, how will he not also with him graciously give us all things? <strong>33</strong> Who shall bring any charge against God's elect? It is God who justifies. <strong>34</strong> Who is to condemn? Christ Jesus is the one who died—more than that, who was raised—who is at the right hand of God, who indeed is interceding for us. <strong>35</strong> Who shall separate us from the love of Christ? Shall tribulation, or distress, or persecution, or famine, or nakedness, or danger, or sword? <strong>36</strong> As it is written,</p>
+
+            <p style="padding-left:1rem;font-style:italic">"For your sake we are being killed all the day long;<br>we are regarded as sheep to be slaughtered."</p>
+
+            <p><strong>37</strong> No, in all these things we are more than conquerors through him who loved us. <strong>38</strong> For I am sure that neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers, <strong>39</strong> nor height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord.</p>
+
+            <p style="margin-top:1.5rem"><em>Read this passage in context at <a href="https://www.biblegateway.com/passage/?search=Romans+8&version=ESV" target="_blank">BibleGateway.com</a> or with original-language tools at <a href="https://www.blueletterbible.org/esv/rom/8/1/" target="_blank">Blue Letter Bible</a>.</em></p>
+
+            <span class="notes-label">My notes — The Text</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- DISCUSSION QUESTIONS — TOP 3 ABOVE THE FOLD -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Discussion Questions (top 3 — for a 30-minute discussion)</h3>
+                <span class="depth depth-all">everyone</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">For a 1-hour meeting with ~30 minutes of actual discussion, focus on these three. Two more questions sit below the fold for groups with extra time.</div>
+
+            <ol class="q-list">
+                <li>Verse 1 says <em>"there is therefore now no condemnation for those who are in Christ Jesus."</em> Where in your life do you still feel condemned even though Paul says you aren't? What would change in your week if you actually believed verse 1? <span class="q-tag q-app">application</span></li>
+
+                <li>Verses 5–8 contrast setting the mind on the flesh versus setting it on the Spirit. What does <em>setting your mind</em> look like in your normal day? Is it about feelings, willpower, focus, or something else? Where does verse 7's phrase <em>"hostile to God"</em> hit harder than you expected? <span class="q-tag q-int">interpretation</span></li>
+
+                <li>Paul lists what cannot separate us from God's love (vv. 35–39): tribulation, distress, persecution, famine, nakedness, danger, sword. Pick the one item that most closely names what you have actually feared this year. How does Paul's claim that <em>that specific thing</em> cannot separate you from Christ's love change how you carry it this week? <span class="q-tag q-app">application</span></li>
+            </ol>
+
+            <span class="notes-label">My notes — Discussion</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- ============= FOLD DIVIDER ============= -->
+    <div class="fold-divider">
+        <span class="fold-arrow">▼ ▼ ▼</span>
+        FURTHER DEPTH BELOW
+        <br>
+        <span style="font-weight:400;font-size:0.82rem">Open these sections if your group has more time, or for personal study during the week.</span>
+        <span class="fold-arrow">▼ ▼ ▼</span>
+    </div>
+
+    <!-- ADDITIONAL DISCUSSION QUESTIONS -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Two More Discussion Questions (for longer meetings)</h3>
+                <span class="depth depth-mid">going deeper</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">If your group has 60+ minutes of discussion, add these two for a fuller treatment of adoption and the "golden chain."</div>
+
+            <ol class="q-list" start="4">
+                <li>Verses 14–17 describe the Spirit of adoption — the cry <em>"Abba! Father!"</em> Paul says we are not slaves but daughters and sons, not just children but heirs. For a woman whose own father was distant, harsh, or absent, what is hard about receiving this? What is liberating? How does this reshape what you bring before God in prayer? <span class="q-tag q-app">application</span></li>
+
+                <li>The "golden chain" of verses 29–30 (foreknew → predestined → called → justified → glorified) is one of the most debated passages in Scripture across Protestant traditions. Read it carefully: which verbs are past tense, and what does that imply about the security of the believer? Why might Paul present salvation as a completed sequence even though glorification is still future? <span class="q-tag q-int">interpretation</span></li>
+            </ol>
+
+            <span class="notes-label">My notes — Additional Questions</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- GOSPEL GLIMPSES -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Gospel Glimpses</h3>
+                <span class="depth depth-all">everyone</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Romans 8 doesn't describe the Christian life — it explains why the Christian life is possible. Three places the gospel breaks through.</div>
+
+            <h4>Substitution at the heart of the chapter</h4>
+            <p><strong>Verse 3 says God did "what the law could not do."</strong> By sending His own Son "in the likeness of sinful flesh and for sin," God "condemned sin in the flesh." This is penal substitution stated plainly: the condemnation that should have fallen on those in Christ fell on Christ Himself. The "no condemnation" of verse 1 is not a forgiving overlook of guilt — it is a transferred verdict. Christ stood where you stood, took the sentence you earned, and you now stand where Christ stood: accepted, beloved, secure.</p>
+
+            <h4>Adoption as the gospel's intimate edge</h4>
+            <p><strong>Justification is the legal heart of the gospel; adoption is its familial heart.</strong> Paul does not stop at "you are forgiven." He pushes through to "you are daughters and sons" — heirs of God, fellow heirs with Christ (vv. 15–17). The cry <em>"Abba! Father!"</em> is not religious vocabulary; it is the kind of word a child uses for her father at home. The Spirit puts that word in the mouth of a woman who, by nature, was estranged. The gospel is not just "your slate is clean." It is "you have a Father, you are family, and the inheritance is real."</p>
+
+            <h4>Nothing can separate</h4>
+            <p><strong>The gospel's deepest comfort is that it cannot be lost by the very people who needed it.</strong> Paul does not say, "If you keep up with God, He will keep you." He says, "Nothing in all creation will be able to separate us from the love of God in Christ Jesus our Lord" (v. 39). Not your worst sin. Not your weakest week. Not the moment you can barely pray. Christ Himself, at the right hand of the Father, is interceding for you (v. 34). The chain runs from the Father's foreknowledge through the Son's intercession to the Spirit's witness in your heart. It cannot be broken because it was never held by you.</p>
+
+            <div class="verse">
+                "For I am sure that neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers, nor height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord."
+                <span class="ref">— Romans 8:38–39</span>
+            </div>
+
+            <div class="takeaways">
+                <h5>Three takeaways</h5>
+                <ul>
+                    <li>The verdict on you was settled at the cross, not at your worst day.</li>
+                    <li>You are family, not staff. Adoption is real and irreversible.</li>
+                    <li>The chain holding you cannot break because it was never held by you.</li>
+                </ul>
+            </div>
+
+            <span class="notes-label">My notes — Gospel Glimpses</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- WHOLE-BIBLE CONNECTIONS -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Whole-Bible Connections</h3>
+                <span class="depth depth-mid">going deeper</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Romans 8 is the New Testament's clearest summary of how the whole Bible's story lands in the believer's life. Five threads pull through.</div>
+
+            <h4>The Spirit and the new creation</h4>
+            <p><strong>The Spirit who hovered over the waters in Genesis 1:2</strong> — bringing order out of chaos and life out of formlessness — is the same Spirit who indwells believers. Romans 8:11 makes the connection explicit: "the Spirit of him who raised Jesus from the dead" will give life to mortal bodies. Ezekiel 36–37 promised God would put a new spirit within His people, replacing hearts of stone with hearts of flesh, breathing life into a valley of dry bones. Romans 8 says that promise has begun in the church.</p>
+
+            <h4>Adoption fulfilling Israel's story</h4>
+            <p><strong>Israel was God's "firstborn son"</strong> (Exodus 4:22; Hosea 11:1) — called out of Egypt, given the law, made heir to covenant promises. Paul's adoption language carries that history forward: in Christ, the privileges promised to Israel are extended to all who believe. The "Abba! Father!" cry the Spirit produces in the believer (v. 15) is the same Aramaic word Jesus used in Gethsemane (Mark 14:36). You don't pray as an outsider pleading for a hearing; you pray with the actual word the Son used.</p>
+
+            <h4>Creation's groaning and the promise of restoration</h4>
+            <p><strong>Romans 8:20–21 echoes Genesis 3:17–19,</strong> where the ground was cursed because of Adam's sin. Paul says creation now "groans" — but waits in hope. The promise of Isaiah 65:17–25 (a new heavens and new earth, no more weeping) and Revelation 21–22 (a renewed creation) are creation's resolution. Christian eschatology is not escape from creation; it is the redemption of it.</p>
+
+            <h4>The "golden chain" across redemptive history</h4>
+            <p><strong>The sequence of Romans 8:29–30</strong> draws on a long thread: God's foreknowledge of Israel (Amos 3:2), His predestining work with Abraham (Genesis 12:1–3) and Jacob (Romans 9:11–13), the call of the prophets from the womb (Jeremiah 1:5), the justification of Abraham by faith (Genesis 15:6, quoted in Romans 4), and the promised glorification of God's people (Daniel 12:3). What Paul declares is not novel — it is the steady pattern of God's saving action across the whole Bible, made personal to every believer.</p>
+
+            <h4>"More than conquerors" and the wartime psalms</h4>
+            <p><strong>Paul's quotation in verse 36</strong> — "we are being killed all the day long" — is from Psalm 44:22, a psalm of communal lament in the middle of Israel's defeat. Paul does not soften it. Being "more than conquerors" does not mean exemption from being slaughtered. The Christian's victory is not visible the way the world counts victory. It is the unbreakable love of Christ that holds in the moment of loss.</p>
+
+            <div class="takeaways">
+                <h5>Three takeaways</h5>
+                <ul>
+                    <li>The Spirit who shaped the cosmos is at work in you personally.</li>
+                    <li>Christian hope is creation-wide — not escape from the body or the world, but the renewal of both.</li>
+                    <li>The "golden chain" is not a new doctrine; it's the whole Bible's pattern made personal.</li>
+                </ul>
+            </div>
+
+            <span class="notes-label">My notes — Whole-Bible Connections</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- HISTORICAL AND CULTURAL BACKGROUND -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Historical and Cultural Background</h3>
+                <span class="depth depth-mid">going deeper</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Paul wrote Romans around AD 56–57 to a church in Rome facing real social pressure. His audience would have heard "adoption" as a legal-financial event, not a sentimental one.</div>
+
+            <h4>The letter's setting</h4>
+            <p><strong>Paul wrote Romans from Corinth in approximately AD 56–57,</strong> during his third missionary journey. He had not yet visited Rome (Romans 1:10–13; 15:22–24). The Roman Christian community was likely Jewish believers (some recently returned after Emperor Claudius's expulsion of Jews from Rome in AD 49 — see Acts 18:2) plus Gentile believers who had grown to majority status during the Jewish absence. Paul's letter integrates these two groups under one gospel.</p>
+
+            <h4>Roman adoption law</h4>
+            <p><strong>Paul's adoption imagery in Romans 8 would have struck his Roman audience with particular force.</strong> Roman <em>adoptio</em> was a formal legal procedure with significant consequences: an adopted child acquired the full rights of a natural child, took the family name, became an heir, and — critically — had any previous debts cancelled. The Roman emperors themselves frequently chose successors by adoption (Augustus, Tiberius, Trajan, Hadrian). When Paul tells believers they are adopted children of God and made heirs, his language is not sentimental; it is legal and dynastic. Your old debts are gone. Your standing is the standing of a daughter of the King.</p>
+
+            <h4>Suffering in the early Roman church</h4>
+            <p><strong>Romans was written before Nero's persecution of Christians</strong> (which began in AD 64 after the Great Fire of Rome), but the church already faced social marginalization, family rejection for converts from Judaism or paganism, and constant imperial scrutiny. Paul's listing of "tribulation, distress, persecution, famine, nakedness, danger, sword" in verse 35 was not abstract. Within ten years of the letter's arrival, Roman believers — many of them women — would be using Paul's words to face exactly those things.</p>
+
+            <h4>The Stoic concept of "spirit" versus the biblical concept</h4>
+            <p><strong>First-century Greco-Roman religion and philosophy had robust language about <span class="greek">pneuma</span></strong> (spirit, breath, animating principle) — particularly in Stoicism, where the divine <span class="greek">pneuma</span> was an impersonal rational force pervading the cosmos. Paul's use of <em>"Spirit"</em> in Romans 8 deliberately distinguishes the Christian doctrine. The Holy Spirit is not an impersonal force; He is a personal Person who indwells, intercedes, leads, witnesses, and helps. The Christian who has the Spirit has been entered by a Person, not animated by a principle.</p>
+
+            <div class="takeaways">
+                <h5>Three takeaways</h5>
+                <ul>
+                    <li>Paul wrote to a real, mixed church under real pressure — not to a theoretical audience.</li>
+                    <li>"Adoption" was a heavy legal word in Rome — full inheritance, debts cancelled, new family name. Apply that weight to your standing as a daughter of God.</li>
+                    <li>The Holy Spirit is a Person, not a force. He intercedes, witnesses, and groans within you.</li>
+                </ul>
+            </div>
+
+            <span class="notes-label">My notes — Historical Background</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- DEEP DIVE -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Deep Dive: Language and Exegesis</h3>
+                <span class="depth depth-deep">seminary depth</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Five Greek terms that carry the weight of the chapter. Verify any of these against <a href="https://www.blueletterbible.org/esv/rom/8/1/" target="_blank">Blue Letter Bible</a>.</div>
+
+            <h4>Key Greek terms</h4>
+
+            <p><strong class="greek">οὐδὲν κατάκριμα (ouden katakrima)</strong> — "no condemnation" (v. 1). The noun <em>katakrima</em> appears in the New Testament only in Romans 5:16, 5:18, and here. It denotes not merely a verdict of guilt but the <em>punitive sentence</em> that flows from such a verdict. Paul's claim is forensic: for those in Christ, the executable sentence has been removed.</p>
+
+            <p><strong class="greek">υἱοθεσία (huiothesia)</strong> — "adoption as sons" (vv. 15, 23). A compound of <em>huios</em> (son) and <em>thesia</em> (placing), literally "the placing of a child." Paul uses the term five times in his letters. It draws on both Old Testament covenant sonship (Israel as God's son, Exodus 4:22) and Greco-Roman legal practice. In context, women are equally included: Galatians 3:28 ("there is neither male nor female") confirms that adoption-language applies to all believers without distinction.</p>
+
+            <p><strong class="greek">προγινώσκω (proginōskō) / προορίζω (proorizō)</strong> — "foreknew" / "predestined" (v. 29). The first verb combines <em>pro-</em> (before) with <em>ginōskō</em> (to know), and in biblical Greek "knowing" frequently carries the sense of covenantal intimacy (cf. Amos 3:2; Genesis 4:1). The second combines <em>pro-</em> with <em>horizō</em> (to mark out a boundary). Together they describe God's prior knowing-and-deciding regarding His people. The interpretation of these verbs is one of the major points of difference between Reformed/Calvinist and Wesleyan/Arminian traditions; both readings work within evangelical orthodoxy.</p>
+
+            <p><strong class="greek">ὑπερνικάω (hypernikaō)</strong> — "more than conquer" (v. 37). Compound of <em>hyper</em> (over, beyond) and <em>nikaō</em> (to conquer). The word is a hapax legomenon in the New Testament — occurring only here. Paul does not say believers merely conquer or barely conquer; they "super-conquer." The verb is in the present tense (continuous action), locating the victory in the present experience of those who are suffering.</p>
+
+            <p><strong class="greek">Ἀββᾶ ὁ πατήρ (Abba ho patēr)</strong> — "Abba, Father" (v. 15). <em>Abba</em> is Aramaic, not Greek; Paul transliterates it and translates with the Greek <em>ho patēr</em>. The phrase appears three times in the New Testament: here, Galatians 4:6, and on Jesus's lips in Gethsemane (Mark 14:36). The early church preserved Jesus's intimate address to the Father as a paradigm for Christian prayer.</p>
+
+            <h4>Literary structure</h4>
+            <p><strong>Romans 8 is one of the most carefully structured chapters in the Pauline corpus.</strong> Most commentators identify a four-fold structure: (1) life in the Spirit and freedom from condemnation, vv. 1–11; (2) sonship and the Spirit's witness, vv. 12–17; (3) suffering, hope, and the Spirit's intercession, vv. 18–30; (4) the certainty of God's love, vv. 31–39. The chapter forms an inclusio with Romans 5: the assurance of justification in 5:1 opens the section, and 8:39 closes it with the inseparability of God's love.</p>
+
+            <h4>Major commentators</h4>
+            <p><strong><a href="https://www.thegospelcoalition.org/" target="_blank">Thomas Schreiner</a></strong> (<em>Romans</em>, Baker Exegetical Commentary, 2nd ed. 2018) reads <em>proginōskō</em> in v. 29 as God's elective foreknowing of persons. <strong>Douglas Moo</strong> (<em>The Epistle to the Romans</em>, NICNT, 2nd ed. 2018) treats Romans 8 as the "celebration" chapter and emphasizes the eschatological tension. <strong>C. E. B. Cranfield</strong> (<em>The Epistle to the Romans</em>, ICC, 1975) gives the most exhaustive technical Greek treatment in English. <strong>John Walvoord and Roy Zuck</strong> (<em>Bible Knowledge Commentary</em>, Dallas Theological Seminary, 1983) read Romans 8 within a dispensational framework.</p>
+
+            <div class="takeaways">
+                <h5>Three takeaways</h5>
+                <ul>
+                    <li>The Greek for "no condemnation" is forensic — a sentence removed, not a guilt overlooked.</li>
+                    <li>"Adoption" (huiothesia) is a Roman legal term Paul co-opted; its weight is dynastic, not sentimental.</li>
+                    <li>Daughters of God pray with Jesus's own word for the Father: Abba.</li>
+                </ul>
+            </div>
+
+            <span class="notes-label">My notes — Deep Dive</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- THEOLOGICAL SOUNDINGS -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Theological Soundings</h3>
+                <span class="depth depth-deep">seminary depth</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Romans 8 anchors Christian assurance in the unbroken initiative of the Triune God: the Father who foreknew, the Son who interceded, the Spirit who indwells.</div>
+
+            <h4>The "big idea" of the chapter</h4>
+            <p><strong>The believer's life is held by the unbroken initiative of the Triune God:</strong> the Father who foreknew and predestined, the Son who was condemned in our place and now intercedes, and the Spirit who indwells, leads, witnesses, and intercedes. The chapter is the doctrinal anchor of Christian assurance. Where Paul's argument lands is not on what the believer must do to remain in Christ, but on the absolute certainty that God will not fail to bring His own to glory.</p>
+
+            <h4>Pneumatology — the doctrine of the Holy Spirit</h4>
+            <p><strong>Romans 8 is the densest chapter in the New Testament on the Spirit's work in the believer:</strong> (1) personal presence (vv. 9–11); (2) mortifying sin (v. 13); (3) adoption and witness of sonship (vv. 15–16); (4) intercession in prayer (vv. 26–27); (5) firstfruits of future redemption (v. 23). All consistent with the trinitarian and pneumatological affirmations of the <a href="https://lausanne.org/content/covenant/lausanne-covenant" target="_blank">Lausanne Covenant</a>, <a href="https://bfm.sbc.net/bfm2000/" target="_blank">BF&M 2000</a> (Article II.C), and the broader conservative evangelical tradition.</p>
+
+            <h4>Soteriology and the order of salvation</h4>
+            <p><strong>The "golden chain" of vv. 29–30 has historically structured Protestant discussions of the <em>ordo salutis</em></strong> (order of salvation). Conservative evangelicals broadly agree that God's foreknowledge precedes His predestining, that calling and justification are essential to salvation, and that glorification is certain. Internal evangelical disagreement concerns whether <em>proginōskō</em> denotes God's relational election of persons or His foresight of foreseen faith. Both readings remain within evangelical orthodoxy as defined by the Lausanne Covenant.</p>
+
+            <h4>Eschatology — the future hope</h4>
+            <p><strong>Romans 8:18–25 grounds the chapter's central comfort:</strong> present sufferings are not comparable to coming glory. Paul's vision is creation-wide — not the rescue of disembodied souls into an immaterial heaven, but the redemption of the body and the renewal of creation itself. Within the SBC/DTS toggle, this hope is read through a premillennial dispensational lens: the resurrection of believers, the visible return of Christ, the millennial reign, and the eternal state of the new heavens and new earth.</p>
+
+            <h4>The problem of evil and the believer's suffering</h4>
+            <p><strong>Romans 8 does not explain why suffering occurs.</strong> Paul does not provide a theodicy. Instead the chapter declares (1) suffering is real and shared by the entire creation (vv. 19–22), (2) the believer's suffering is not separation from God's love but is being woven into God's purpose to conform the believer to the image of His Son (vv. 28–29), and (3) the present suffering is incommensurable with the coming glory (v. 18). The pastoral implication is precise: God is not absent, God is not surprised, and God will not be defeated.</p>
+
+            <div class="takeaways">
+                <h5>Three takeaways</h5>
+                <ul>
+                    <li>Christian assurance rests on the Triune God's initiative, not the believer's performance.</li>
+                    <li>The Holy Spirit is doing five distinct things in you right now (Romans 8 lists them).</li>
+                    <li>Suffering is not exemption-worthy; it is being woven into your conformity to Christ.</li>
+                </ul>
+            </div>
+
+            <span class="notes-label">My notes — Theological Soundings</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- LEADER NOTES -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Leader Notes</h3>
+                <span class="depth depth-mid">for the study leader</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <div class="big-idea">Tight pacing for a 1-hour meeting (~30 minutes of actual discussion). Watch for two hard moments and one quiet closing.</div>
+
+            <h4>Pacing for a 1-hour meeting (~30 minutes of discussion)</h4>
+            <p><strong>A workable rhythm:</strong> 5 minutes of arrival and opening prayer; 10 minutes reading the TLDR and Bringing It Home aloud as a group; 25 minutes on the three discussion questions (about 8 minutes per question); 10 minutes for prayer requests over each other; close. If the group runs long, the two below-the-fold questions can be moved to next week or skipped.</p>
+
+            <div class="leader-note">
+                <strong>Leader tip — verse 1 lands hard.</strong> Most women in your group quietly believe verse 1 doesn't fully apply to them — that there's still some condemnation lurking somewhere. When you ask question 1, be prepared for honest answers. Don't try to "fix" what someone shares. Sit with it. Then read verse 1 over them again.
+            </div>
+
+            <h4>Sensitive topic prep</h4>
+            <p><strong>Two threads can land hard.</strong> First, verse 15's contrast between "the spirit of slavery to fall back into fear" and "the Spirit of adoption" can surface real wounds for women whose own fathers were absent, harsh, or abusive. Watch the room. Don't direct conversation toward anyone visibly tightening; follow up privately later in the week. Second, the closing list of things that cannot separate (tribulation, distress, persecution, famine, nakedness, danger, sword) names real suffering. Some women in your group are in the middle of one of these right now — a diagnosis, an empty house, a marriage in crisis, a wayward child. Do not treat the verse as an abstraction.</p>
+
+            <div class="leader-note">
+                <strong>Leader tip — closing the meeting.</strong> Consider closing by reading verses 31–39 aloud over the group as a benediction. Have the women stand. Read it slowly. The chapter is built to be received this way.
+            </div>
+
+            <span class="notes-label">My notes — Leader Notes</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="section">
+        <div class="section-header" onclick="toggle(this)">
+            <div style="display:flex;align-items:center;gap:10px">
+                <h3>Resources and Links</h3>
+                <span class="depth depth-all">everyone</span>
+            </div>
+            <span class="chevron">&#9654;</span>
+        </div>
+        <div class="section-body">
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 10px 0; border-bottom: 1px solid #ccc;"><strong><a href="https://www.biblegateway.com/passage/?search=Romans+8&version=ESV" target="_blank">BibleGateway: Romans 8 (ESV)</a></strong> — Read in full context with translation toggles.</li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #ccc;"><strong><a href="https://www.blueletterbible.org/esv/rom/8/1/" target="_blank">Blue Letter Bible: Romans 8</a></strong> — Greek parsing, lexical tools, commentary access.</li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #ccc;"><strong><a href="https://www.thegospelcoalition.org/" target="_blank">The Gospel Coalition</a></strong> — Search "Romans 8" or "predestination" for accessible articles from a Reformed evangelical community.</li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #ccc;"><strong><a href="https://www.desiringgod.org/" target="_blank">Desiring God</a></strong> — John Piper has preached extensively on Romans; deep written and audio content.</li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #ccc;"><strong><a href="https://bible.org" target="_blank">Bible.org</a></strong> — Curated articles including dispensational expositions from <a href="https://www.dts.edu" target="_blank">Dallas Theological Seminary</a>-affiliated authors.</li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #ccc;"><strong><a href="https://www.gotquestions.org/Book-of-Romans.html" target="_blank">Got Questions: Book of Romans</a></strong> — Plain-English overview of the book's structure and theology.</li>
+                <li style="padding: 10px 0;"><strong><a href="https://lausanne.org/content/covenant/lausanne-covenant" target="_blank">The Lausanne Covenant</a></strong> — The 1974 global evangelical statement that anchors the baseline theological lens used in this study.</li>
+            </ul>
+
+            <span class="notes-label">My notes — Resources</span>
+            <div class="notes-section" contenteditable="true" spellcheck="true"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER (FINGERPRINT) -->
+    <div class="footer fingerprint">
+        <p><strong>Generated by:</strong> [study leader's name — fill in when sharing]<br>
+        <strong>Generated on:</strong> 2026-05-01 · <strong>Version:</strong> V2 · <strong>Tool:</strong> Study Guide Generator v1.3 · <strong>Canonical source:</strong> <a href="https://github.com/alexmagginetti/study-guide-generator" target="_blank">github.com/alexmagginetti/study-guide-generator</a></p>
+        <p>The Study Guide Generator prompt kit is © 2026 Alex Magginetti. All rights reserved; shared by direct permission only. The generated study above is the work of the user named above, who is responsible for its content, for personal and local-church ministry use.</p>
+        <p>Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), copyright © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
+        <p>The Study Guide Generator does not distribute Bible text. Each translation's text remains the copyright of its publisher. The kit's author makes no claim to any translation's copyright and assumes no liability for the user's choice of translation.</p>
+        <p><em>This study was AI-generated and reviewed by a separate AI quality-assurance pass (Section F of the generator). The QA pass is mandatory and cannot be skipped. Verify all Scripture references against your Bible. Not endorsed by any specific church or seminary.</em></p>
+    </div>
+
+    <script>
+        function toggle(header){header.classList.toggle('open');header.nextElementSibling.classList.toggle('show')}
+        function adjustText(delta){
+            const root=document.documentElement;
+            let scale=parseFloat(root.style.getPropertyValue('--text-scale'))||1;
+            if(delta===0){scale=1;}
+            else{scale=Math.max(0.85,Math.min(1.5,scale+(delta*0.1)));}
+            root.style.setProperty('--text-scale',scale);
+        }
+    </script>
+</body>
+</html>

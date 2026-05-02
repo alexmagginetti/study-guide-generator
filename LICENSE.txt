@@ -1,0 +1,12 @@
+STUDY GUIDE GENERATOR
+Copyright © 2026 Alex Magginetti. All rights reserved.
+
+This work is distributed by the author to specific individuals by direct permission. If you received this work without permission, please contact the author before using it.
+
+No part of this work may be reproduced, modified, redistributed, or used for any commercial purpose without the prior written permission of the author. Permission for personal, church, ministry, and small-group use is granted on request and is generally given freely; commercial use, paid republication, and inclusion in commercial products require a separate written license.
+
+The Study Guide Generator does not distribute Bible text. Each Bible translation's text remains the copyright of its respective publisher (Crossway for the ESV; Holman for the CSB; Biblica for the NIV; etc.). The author makes no claim to any translation's copyright and assumes no liability for the user's choice of translation. Users are responsible for complying with the licensing terms of whichever translation they select.
+
+This software is provided "as is" without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the author be liable for any claim, damages, or other liability arising from the use of the work.
+
+To inquire about licensing terms beyond personal and ministry use, contact the author through the GitHub repository at https://github.com/Alexmagginetti/study-guide-generator.
