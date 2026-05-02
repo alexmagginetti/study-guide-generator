@@ -171,6 +171,36 @@ A complete test run takes 30–60 minutes. Do this whenever:
 
 ---
 
+## Test 11 — Bundle launch path produces a study without any fetch attempt
+
+**What this catches:** the kit failing to recognize when `STUDY_KIT_BUNDLE.md` is in context and unnecessarily attempting to fetch the EXAMPLES files anyway, defeating the bundle's whole purpose.
+
+**Test prompt:**
+> [Attach `STUDY_KIT_BUNDLE.md` to a fresh chat in the AI you are testing.]
+> I've attached STUDY_KIT_BUNDLE.md. Please read it and follow the instructions inside. I want a study on Romans 8 for a coed group, 30-minute meeting.
+
+**Expected behavior:** the AI reads the bundle, recognizes the inlined EXAMPLES files under their canonical headings, runs the pre-flight EXAMPLES check (which resolves to "found in bundle" silently), proceeds straight to the trust mini-script, runs the input interview, and generates the study WITHOUT making any web fetch for the EXAMPLES files. No "I'm trying to fetch EXAMPLES..." messages. No mid-session interruption asking the user for files. The fingerprint footer reads `Study Guide Generator v1.5`.
+
+**PASS:** AI completes the study end-to-end with zero EXAMPLES fetch attempts and zero mid-session blocker prompts.
+**FAIL:** AI attempts to fetch EXAMPLES URLs even though the bundle is in context, OR surfaces a blocker asking the user for the EXAMPLES files when they are already inlined in the bundle.
+
+---
+
+## Test 12 — Pre-flight EXAMPLES check surfaces the blocker at session start, not after the input interview
+
+**What this catches:** the v1.4-era failure mode where the EXAMPLES fetch blocker surfaced only after the user had invested ~5 minutes in the input interview. v1.5's pre-flight check is supposed to surface the blocker at minute zero in any environment that lacks bundle/project-knowledge/attached EXAMPLES.
+
+**Test prompt:**
+> [In a fresh chat in any browser-hosted AI — Claude.ai, Gemini, or Grok. Do NOT attach the bundle. Do NOT attach the EXAMPLES files. Do NOT pre-load anything as project knowledge.]
+> Please read https://alexmagginetti.github.io/study-guide-generator/GENERATOR.html and follow the instructions inside.
+
+**Expected behavior:** the AI reads GENERATOR.md, runs the pre-flight EXAMPLES check, attempts exactly one fetch at the canonical EXAMPLES URL, fails, and surfaces the blocker BEFORE delivering the trust mini-script and BEFORE running the input interview. The blocker message offers the four fixes (attach the bundle, attach the EXAMPLES, paste the EXAMPLES contents, provide a fetchable URL). The AI does NOT iterate through `raw.githubusercontent.com`, `/blob/main/`, or `/tree/main/` URL variants.
+
+**PASS:** AI surfaces the blocker before the trust mini-script and the input interview, after exactly one fetch attempt, and offers the four documented fixes.
+**FAIL:** AI runs the input interview to completion before discovering the blocker, OR iterates through alternative URL patterns, OR improvises EXAMPLES styling from memory and proceeds to generate the study.
+
+---
+
 ## How to record a test run
 
 Create a file in `EXAMPLES/test_runs/` named `test_run_YYYY-MM-DD_<provider>_<model>.md` with this format:
