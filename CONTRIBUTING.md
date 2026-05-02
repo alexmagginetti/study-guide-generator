@@ -24,7 +24,7 @@ If you ran the kit through an AI and the output had a problem — hallucinated H
 ## What kinds of contributions are *not* a good fit
 
 - Sweeping rewrites of the theological framing. The Lausanne Covenant baseline plus the SBC/DTS-default toggle structure is intentional. Adding a new toggle is fine; replacing the baseline is not.
-- Changes that weaken the QA loop, the trust mini-script, or any of the six hard rules in the Instructions to the AI Model block.
+- Changes that weaken the QA loop, the trust mini-script, or any of the eight hard rules in the Instructions to the AI Model block.
 - Adding ChatGPT/OpenAI to the recommended-providers list. The exclusion is intentional and based on the maintainer's conviction; please don't reopen it.
 - Adding any external CDN or remote resource to the HTML template. The output stays self-contained for security and trust reasons.
 
@@ -40,4 +40,4 @@ Be charitable with each other. Disagree about theology and method without becomi
 
 ## Questions?
 
-Open an Issue. If you'd rather reach the maintainer privately, the email associated with the GitHub account is the right channel.
+Open an Issue. If you'd rather reach the maintainer privately, the email associated with
