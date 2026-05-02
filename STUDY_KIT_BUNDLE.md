@@ -9,7 +9,7 @@ The pre-flight EXAMPLES check that lives at the start of the GENERATOR's instruc
 ---
 
 # Study Guide Generator — Complete Guide
-# Version 1.4 — May 2026
+# Version 1.5 — May 2026
 
 ---
 
@@ -2668,6 +2668,6 @@ Second: paying for AI does not make the AI more right. It makes it more capable 
 
 ## Bundle metadata
 
-- Bundle generated: 2026-05-02 04:44:12 UTC
-- Source commit: 47f5197bf4fd7dcc9c4a04df379089e07c8008f0
+- Bundle generated: 2026-05-02 04:55:24 UTC
+- Source commit: 98c8bd9446eb92a5bc184b88d6cdcb22b361b9c1
 - Verify integrity by comparing the SHA-256 of the canonical files against CHECKSUMS.txt in the repo root.

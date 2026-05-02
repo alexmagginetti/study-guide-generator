@@ -1,5 +1,5 @@
 # Study Guide Generator — Complete Guide
-# Version 1.4 — May 2026
+# Version 1.5 — May 2026
 
 ---
 
