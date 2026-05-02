@@ -2668,6 +2668,6 @@ Second: paying for AI does not make the AI more right. It makes it more capable 
 
 ## Bundle metadata
 
-- Bundle generated: 2026-05-02 04:55:24 UTC
-- Source commit: 98c8bd9446eb92a5bc184b88d6cdcb22b361b9c1
+- Bundle generated: 2026-05-02 04:57:54 UTC
+- Source commit: 27e1ba5257e3751a2ac9ce2e11131d2f4ab61d36
 - Verify integrity by comparing the SHA-256 of the canonical files against CHECKSUMS.txt in the repo root.
