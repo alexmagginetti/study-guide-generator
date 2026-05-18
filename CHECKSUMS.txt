@@ -22,16 +22,17 @@ deliberately reflect those exact stored bytes: hashing precisely what
 GitHub serves is what makes the check reproducible by anyone, on any
 operating system, rather than depending on a particular local setup.
 
-Reproduce any line yourself (example shown for GENERATOR.md). All three
-hash the exact stored/served bytes and yield the value listed above:
+Reproduce any line yourself (example shown for GENERATOR.md). Each
+command hashes the exact bytes GitHub serves and yields the value listed
+above. The most robust check needs no local clone at all:
 
-  # Any OS with git + sha256sum, straight from the canonical repo
-  # (operates on the stored blob, so it is independent of your
-  #  core.autocrlf / checkout settings):
-  git show main:GENERATOR.md | sha256sum
-
-  # Or against the file as served by GitHub "raw":
+  # Simplest — hash the file straight from GitHub (any OS with curl):
   curl -sL https://raw.githubusercontent.com/alexmagginetti/study-guide-generator/main/GENERATOR.md | sha256sum
+
+  # From a clone — pin to the canonical REMOTE ref, never a possibly
+  # stale local branch. Fetch first; this reads the stored blob, so it
+  # is independent of your core.autocrlf / checkout settings:
+  git fetch origin && git show origin/main:GENERATOR.md | sha256sum
 
   # Windows PowerShell, against a file downloaded from GitHub raw:
   Get-FileHash .\GENERATOR.md -Algorithm SHA256
