@@ -2,7 +2,17 @@
 
 This is the prioritized, living backlog for the Study Guide Generator. It reconciles an original 20-gap review (first written against kit v1.4) against the current state of the kit, so that identified work is not lost between releases. Bug-class items are cleared as they are encountered and fixed; positioning and design items are recorded with a recommended next action and held until the maintainer makes a direction decision. This file is updated each release.
 
-**Last reconciled: 2026-05-17 against kit v1.7**
+**Last reconciled: 2026-05-18 against kit v1.8**
+
+---
+
+## Resolved in v1.8
+
+End-to-end traceability of every deliverable:
+
+- **No debugging fingerprints on outputs.** Both the study HTML and the Section F QA report now end with a **GENERATION PROVENANCE & DEBUG block** (Section D): attribution, self-reported AI environment, observed generation events (scripture acquisition path, EXAMPLES path, truncation/continuation, revision, rule refusals, QA verdict + unresolved-CRITICAL count), confirmed inputs + a neutral user-steering summary, and a responsibility/standby line. Bound by a HONESTY RULE: every field is source-tagged and unknowns are written literally, never guessed — so the receipt cannot itself become a hallucination. Prints with the file; EXAMPLES untouched. Cover note gained a light feedback ask (satisfaction + which app/settings/plan, since the AI cannot self-detect those) routed to existing GitHub Issues / Bug Report tooling; user replies are folded back into the block.
+
+**Design note.** Subscription tier, exact model version, thinking mode, and token state are not reliably detectable by the generating model. Rather than have the model assert them (which would reintroduce hallucination), v1.8 captures only what is gleanable/observed/self-reported/user-stated, tags each by source, and collects the rest via an optional post-delivery feedback ask. This was a deliberate accuracy-over-completeness decision.
 
 ---
 
