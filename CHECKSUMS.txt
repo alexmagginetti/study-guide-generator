@@ -15,29 +15,34 @@ F3215D165FD99B9FF7FA2DD95079A6B12F303315EE366C3DA87D9423B3C733C2  STUDY_KIT_BUND
 --- How these were produced, and how anyone can verify them ---
 
 These are plain SHA-256 hashes of the exact file bytes as stored in the
-canonical Git repository and served by GitHub (LF line endings) — the same
-bytes the bundle-build GitHub Action and any web download receive. This
-basis was chosen deliberately: it is reproducible on any operating system
-by anyone, which is what makes the verification trustworthy. (A Windows
-working copy checked out with core.autocrlf=true will differ by line
-endings only; that is an end-of-line artifact, not tampering. Verify a
-file as downloaded from GitHub, not a CRLF-converted local checkout.)
+canonical Git repository and served by GitHub "raw" — the same bytes the
+bundle-build GitHub Action and any download receive. The repository's
+text files currently use CRLF (Windows) line endings, and these hashes
+deliberately reflect those exact stored bytes: hashing precisely what
+GitHub serves is what makes the check reproducible by anyone, on any
+operating system, rather than depending on a particular local setup.
 
-Reproduce any line yourself (example shown for GENERATOR.md):
+Reproduce any line yourself (example shown for GENERATOR.md). All three
+hash the exact stored/served bytes and yield the value listed above:
 
-  # Any OS with git + sha256sum, against the live canonical repo:
+  # Any OS with git + sha256sum, straight from the canonical repo
+  # (operates on the stored blob, so it is independent of your
+  #  core.autocrlf / checkout settings):
   git show main:GENERATOR.md | sha256sum
 
-  # Or against a file downloaded from GitHub "raw":
+  # Or against the file as served by GitHub "raw":
   curl -sL https://raw.githubusercontent.com/alexmagginetti/study-guide-generator/main/GENERATOR.md | sha256sum
 
-  # Windows PowerShell, against a file you downloaded:
+  # Windows PowerShell, against a file downloaded from GitHub raw:
   Get-FileHash .\GENERATOR.md -Algorithm SHA256
 
 Compare the result to the matching line above (comparison is
-case-insensitive). If a file you received does not match, do not use it —
-re-download from https://github.com/alexmagginetti/study-guide-generator
-and, if it still differs, report it via a GitHub Issue.
+case-insensitive). Hash the file exactly as downloaded from GitHub — do
+not let an editor or a re-checkout rewrite its line endings first, since
+that changes the bytes and therefore the hash. If a file you received
+does not match, do not use it — re-download from
+https://github.com/alexmagginetti/study-guide-generator and, if it still
+differs, report it via a GitHub Issue.
 
 Notes: CHECKSUMS.txt does not hash itself. BACKLOG.md is intentionally
 excluded — it is a maintainer process log, not a file the kit's AI
