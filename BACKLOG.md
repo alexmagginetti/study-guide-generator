@@ -2,7 +2,18 @@
 
 This is the prioritized, living backlog for the Study Guide Generator. It reconciles an original 20-gap review (first written against kit v1.4) against the current state of the kit, so that identified work is not lost between releases. Bug-class items are cleared as they are encountered and fixed; positioning and design items are recorded with a recommended next action and held until the maintainer makes a direction decision. This file is updated each release.
 
-**Last reconciled: 2026-05-17 against kit v1.6**
+**Last reconciled: 2026-05-17 against kit v1.7**
+
+---
+
+## Resolved in v1.7
+
+Scripture-fidelity gap closed by construction, and unresolved critical checks made impossible to miss:
+
+- **Scripture from memory (the recurring `CRITICAL CHECK · ESV TEXT FIDELITY` flag).** Hard rule #3 now forbids reproducing Scripture from memory outright. The new SCRIPTURE ACQUISITION PROCEDURE (TRANSLATION HANDLING block) requires the verbatim passage to be fetched from an authoritative public Bible site or pasted in by the user (step-by-step instructions written for a non-technical, elderly reader, with a clickable Blue Letter Bible link), with a hard STOP RULE that forbids any from-memory fallback. Section F check 1.5 was recast to verify acquisition provenance instead of diffing the model's own recall, so the old "NOT VERIFIED" critical no longer fires on correctly-generated studies.
+- **Quiet critical checks.** New CRITICAL-CHECK SURFACING rule: unresolved CRITICAL items now force a print-hidden warning banner above the study title and a "HUMAN REVIEW REQUIRED" lead line on the chat cover note. Section F emits a machine-readable unresolved-critical roster the surfacing step consumes.
+
+**Architecture note (originating v1.7 plan).** The handed-over v1.7 deployment plan was drafted against an assumed Python application — `generate.py`, an API.Bible HTTP client, a local scripture cache, `config/bible_ids.json`, `--no-interactive` / stderr, `/scripts/verify_passage.py`. None of that exists or can run: this kit is a Markdown prompt library that a non-technical user pastes into Claude/Gemini/Grok, with no program and no API key in the loop. Both fixes were therefore implemented at the prompt layer (GENERATOR.md), which is the only layer that affects the kit as actually used. The plan's app-only deliverables are intentionally **not** built and are **not** open backlog items — they would be a different product (a standalone generator app), which is a maintainer direction decision, not a deferred bug. The plan's API.Bible primary path is partially reflected as Path A "fetch if the model has a working browse tool"; its paste-in fallback is Path B.
 
 ---
 

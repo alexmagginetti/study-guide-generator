@@ -251,4 +251,4 @@ Pull requests adding new tests are welcome — see CONTRIBUTING.md.
 
 ---
 
-*Last updated: 2026-05-17 · Kit version: v1.6 · Maintained by Alex Magginetti.*
+*Last updated: 2026-05-17 · Kit version: v1.7 · Maintained by Alex Magginetti.*
