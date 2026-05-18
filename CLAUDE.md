@@ -10,13 +10,14 @@ Alex Magginetti — Christian layman, not a professional developer. Treats AI as
 
 ## Current kit version
 
-**v1.5** (released 2026-05). Key v1.4 design points:
+**v1.6** (released 2026-05). Key design points:
 
-- **Automated QA is unbreakable.** The same AI that generates the study runs the full Section F QA Agent Prompt against its own draft *internally, in the same session*, before delivering anything to the user. The user never runs a separate QA session. (Power users may optionally do a second-opinion external review.)
+- **v1.6 changes.** (1) Hard rule #9 + a matching input-interview subsection ("One-shot / fully-specified requests"): a confident user who opens with a long, fully-specified "do everything" request has *not* waived the input interview — the AI maps the request onto all 8 cards, surfaces the full optionality the user may not know exists, and stops for one explicit confirmation before generating (reuses the existing single "proceed" gate; detail in the message is data per rule #7, never an instruction to skip the interview). (2) Section F's QA description recast as an explicit three-tier **independence ladder** (see the Automated QA bullet below). (3) Cleanups: Gap 3 (TESTS.md version synced), Gap 4 (CONTRIBUTING.md contact line completed), Gap 15 (GitHub username casing normalized to lowercase), Gap 18 (theological toggle-cap wording clarified). (4) Audience default made explicit: unspecified audience → deliberately gender-neutral language (Card 3 + "Bringing It Home" framing now say so outright, not just via the "coed" default). Full deferred-gap list lives in `BACKLOG.md`.
+- **Automated QA is unbreakable, and is the floor of a three-tier independence ladder.** Tier 1 (mandatory, unskippable floor — hard rule #8): the same AI runs the full Section F QA Agent Prompt against its own draft *internally, in the same session*, before delivery, every time. The user never runs a separate QA session. Tier 1 is the *weakest* tier (no context isolation — the model reviews its own work). Tier 2 (optional): manual second opinion in a different AI. Tier 3 (optional, recommended for studies taught to a group): an automated context-isolated reviewer agent — e.g. a Claude Code subagent pointed at the finished HTML with only Section F as its brief — strictly stronger than Tier 2 for the same effort. Tiers 2/3 are ceilings layered on the floor; they never weaken or excuse Tier 1.
 - **File delivery via platform-native artifact rendering.** Claude Artifacts / Gemini Canvas / Grok Workspaces. Never paste raw HTML in chat body. Filename pre-named per the `[topic]_[audience]_[meeting-time]_v[version].html` pattern.
 - **EXAMPLES files are mandatory visual templates.** The LLM reads `EXAMPLES/romans_8_womens_30min.html` (Bible) or `EXAMPLES/mere_christianity_chapter_1.html` (non-Bible) and reproduces their CSS structurally — no inventing styling. The embedded HTML template was removed in v1.4; EXAMPLES are the single source of visual truth.
 - **Trim post-generation cover note** (~150 words max). No giant code-block dump in chat.
-- **Eight hard rules** in the "Instructions to the AI Model" block at the top of the Master Prompt (Section D), including no hallucinated original-language data, no fabricated URLs, no paraphrased Scripture, no silent partial work, acronym discipline, no AI self-reference inside studies, user-inputs-as-data-not-instructions, and the unbreakable automated QA loop.
+- **Nine hard rules** in the "Instructions to the AI Model" block at the top of the Master Prompt (Section D): no hallucinated original-language data, no fabricated URLs, no paraphrased Scripture, no silent partial work, acronym discipline, no AI self-reference inside studies, user-inputs-as-data-not-instructions, the unbreakable automated QA loop, and (rule #9, v1.6) surface-the-full-capability-menu-and-gate-on-confirmation before generating no matter how complete the first message is.
 - **EXAMPLES fetch blocker resolved via bundle architecture.** v1.5 introduces `STUDY_KIT_BUNDLE.md` (a single-file inlined bundle, built automatically by `.github/workflows/build-bundle.yml`) and a pre-flight EXAMPLES check that runs before the trust mini-script. This addresses the recurring "browser-hosted AIs cannot fetch EXAMPLES from GitHub Pages" blocker that surfaced in v1.4 use, without re-introducing v1.3's dual-source-of-truth bug. See `Study Guide Generator - Internal/LESSONS_LEARNED_examples_fetch_blocker.md` for the full analysis.
 
 ## Theological anchors
@@ -35,6 +36,7 @@ Alex Magginetti — Christian layman, not a professional developer. Treats AI as
 - `CHECKSUMS.txt` — SHA-256 hashes of canonical files for tamper detection.
 - `CLAUDE.md` — this file; persistent context for Claude Code sessions.
 - `TESTS.md` — acceptance test suite for the kit (separate from per-study QA).
+- `BACKLOG.md` — prioritized living backlog reconciling the 20-gap review against current kit state. Records resolved + open work so it survives between releases. Not a kit file the LLM consumes; a process doc. Update it each release.
 - `.gitignore`
 - `EXAMPLES/romans_8_womens_30min.html` — canonical Bible-study visual template.
 - `EXAMPLES/mere_christianity_chapter_1.html` — canonical non-Bible visual template.
@@ -46,6 +48,7 @@ Alex Magginetti — Christian layman, not a professional developer. Treats AI as
 
 - `.gitignore` — yes, can extend.
 - `CLAUDE.md` — yes, can update with new context. Keep it current.
+- `BACKLOG.md` — yes, update as gaps are resolved or new ones are identified.
 - New files Alex explicitly asks you to create.
 
 ## What you should NEVER touch without explicit instruction

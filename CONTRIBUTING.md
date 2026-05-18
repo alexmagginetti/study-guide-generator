@@ -40,4 +40,4 @@ Be charitable with each other. Disagree about theology and method without becomi
 
 ## Questions?
 
-Open an Issue. If you'd rather reach the maintainer privately, the email associated with
+Open an Issue. If you'd rather reach the maintainer privately, the email associated with the maintainer's GitHub profile ([@alexmagginetti](https://github.com/alexmagginetti)) is the best private channel — open an Issue first and ask for it there if it is not listed. Please keep substantive kit discussion in public Issues where others benefit.

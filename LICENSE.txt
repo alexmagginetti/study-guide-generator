@@ -9,4 +9,4 @@ The Study Guide Generator does not distribute Bible text. Each Bible translation
 
 This software is provided "as is" without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the author be liable for any claim, damages, or other liability arising from the use of the work.
 
-To inquire about licensing terms beyond personal and ministry use, contact the author through the GitHub repository at https://github.com/Alexmagginetti/study-guide-generator.
+To inquire about licensing terms beyond personal and ministry use, contact the author through the GitHub repository at https://github.com/alexmagginetti/study-guide-generator.

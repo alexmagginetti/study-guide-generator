@@ -179,7 +179,7 @@ A complete test run takes 30–60 minutes. Do this whenever:
 > [Attach `STUDY_KIT_BUNDLE.md` to a fresh chat in the AI you are testing.]
 > I've attached STUDY_KIT_BUNDLE.md. Please read it and follow the instructions inside. I want a study on Romans 8 for a coed group, 30-minute meeting.
 
-**Expected behavior:** the AI reads the bundle, recognizes the inlined EXAMPLES files under their canonical headings, runs the pre-flight EXAMPLES check (which resolves to "found in bundle" silently), proceeds straight to the trust mini-script, runs the input interview, and generates the study WITHOUT making any web fetch for the EXAMPLES files. No "I'm trying to fetch EXAMPLES..." messages. No mid-session interruption asking the user for files. The fingerprint footer reads `Study Guide Generator v1.5`.
+**Expected behavior:** the AI reads the bundle, recognizes the inlined EXAMPLES files under their canonical headings, runs the pre-flight EXAMPLES check (which resolves to "found in bundle" silently), proceeds straight to the trust mini-script, runs the input interview, and generates the study WITHOUT making any web fetch for the EXAMPLES files. No "I'm trying to fetch EXAMPLES..." messages. No mid-session interruption asking the user for files. The fingerprint footer reads `Study Guide Generator v1.6`.
 
 **PASS:** AI completes the study end-to-end with zero EXAMPLES fetch attempts and zero mid-session blocker prompts.
 **FAIL:** AI attempts to fetch EXAMPLES URLs even though the bundle is in context, OR surfaces a blocker asking the user for the EXAMPLES files when they are already inlined in the bundle.
@@ -251,4 +251,4 @@ Pull requests adding new tests are welcome — see CONTRIBUTING.md.
 
 ---
 
-*Last updated: 2026-05-01 · Kit version: v1.3 · Maintained by Alex Magginetti.*
+*Last updated: 2026-05-17 · Kit version: v1.6 · Maintained by Alex Magginetti.*
